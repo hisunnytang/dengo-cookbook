@@ -1,0 +1,2399 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Dengo Cookbook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Dengo Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Install Guide
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/buildingBlock.html">
+   A Chemistry Solver from Scratch
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/c_example.html">
+   Building Dengo Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/be_chem_solve.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/be_chem_solve.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing necessary libraries</span>
+<span class="kn">import</span> <span class="nn">pyximport</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span>   <span class="nn">dengo.chemistry_constants</span> <span class="kn">import</span> <span class="n">tiny</span><span class="p">,</span> <span class="n">kboltz</span><span class="p">,</span> <span class="n">mh</span><span class="p">,</span> <span class="n">G</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_rates</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_cooling</span>
+
+<span class="kn">from</span> <span class="nn">dengo.chemical_network</span> <span class="kn">import</span> \
+    <span class="n">ChemicalNetwork</span><span class="p">,</span> \
+    <span class="n">reaction_registry</span><span class="p">,</span> \
+    <span class="n">cooling_registry</span><span class="p">,</span> \
+    <span class="n">species_registry</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_rates</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_cooling</span>
+
+<span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">lambdify</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_primordial_network</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Initial a ChemicalNetwork object</span>
+<span class="sd">    for primordial network 9-species model</span>
+<span class="sd">    Return:</span>
+<span class="sd">     primordial: ChemicalNetwork with primordial reactions and cooling</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># this register all the rates specified in `primordial_rates.py`</span>
+    <span class="n">dengo</span><span class="o">.</span><span class="n">primordial_rates</span><span class="o">.</span><span class="n">setup_primordial</span><span class="p">()</span>
+
+    <span class="c1"># initialize the chmical network object</span>
+    <span class="n">primordial</span> <span class="o">=</span> <span class="n">ChemicalNetwork</span><span class="p">()</span>
+
+    <span class="c1"># add all the reactions</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k01&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k02&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k03&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k04&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k05&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k06&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k07&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k08&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k09&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k10&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k11&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k12&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k13&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k14&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k15&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k16&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k17&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k18&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k19&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k21&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k22&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k23&quot;</span><span class="p">)</span>
+
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;brem&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHII&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHeIII&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;gloverabel08&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ceHI&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;h2formation&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHeII2&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHeII1&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ciHeIS&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ceHeII&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ciHI&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ceHeI&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;gammah&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ciHeI&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;ciHeII&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;cie_cooling&quot;</span><span class="p">)</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;compton&quot;</span><span class="p">)</span>
+
+    <span class="c1"># This defines the temperature range for the rate tables</span>
+    <span class="n">primordial</span><span class="o">.</span><span class="n">init_temperature</span><span class="p">((</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e8</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">primordial</span>
+<span class="c1">#     primordial.enforce_conservation = True</span>
+<span class="c1">#     primordial.set_equilibrium_species(&quot;H2_2&quot;)</span>
+
+<span class="n">cn_simple</span> <span class="o">=</span> <span class="n">setup_primordial_network</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding reaction: k01 : 1*H_1 + 1*de =&gt; 1*H_2 + 2*de
+Adding reaction: k02 : 1*H_2 + 1*de =&gt; 1*H_1
+Adding reaction: k03 : 1*He_1 + 1*de =&gt; 1*He_2 + 2*de
+Adding reaction: k04 : 1*He_2 + 1*de =&gt; 1*He_1
+Adding reaction: k05 : 1*He_2 + 1*de =&gt; 1*He_3 + 2*de
+Adding reaction: k06 : 1*He_3 + 1*de =&gt; 1*He_2
+Adding reaction: k07 : 1*H_1 + 1*de =&gt; 1*H_m0
+Adding reaction: k08 : 1*H_m0 + 1*H_1 =&gt; 1*H2_1 + 1*de
+Adding reaction: k09 : 1*H_1 + 1*H_2 =&gt; 1*H2_2
+Adding reaction: k10 : 1*H2_2 + 1*H_1 =&gt; 1*H2_1 + 1*H_2
+Adding reaction: k11 : 1*H2_1 + 1*H_2 =&gt; 1*H2_2 + 1*H_1
+Adding reaction: k12 : 1*H2_1 + 1*de =&gt; 2*H_1 + 1*de
+Adding reaction: k13 : 1*H2_1 + 1*H_1 =&gt; 3*H_1
+Adding reaction: k14 : 1*H_m0 + 1*de =&gt; 1*H_1 + 2*de
+Adding reaction: k15 : 1*H_m0 + 1*H_1 =&gt; 2*H_1 + 1*de
+Adding reaction: k16 : 1*H_m0 + 1*H_2 =&gt; 2*H_1
+Adding reaction: k17 : 1*H_m0 + 1*H_2 =&gt; 1*H2_2 + 1*de
+Adding reaction: k18 : 1*H2_2 + 1*de =&gt; 2*H_1
+Adding reaction: k19 : 1*H2_2 + 1*H_m0 =&gt; 1*H_1 + 1*H2_1
+Adding reaction: k21 : 2*H_1 + 1*H2_1 =&gt; 2*H2_1
+Adding reaction: k22 : 2*H_1 + 1*H_1 =&gt; 1*H2_1 + 1*H_1
+Adding reaction: k23 : 1*H2_1 + 1*H2_1 =&gt; 2*H_1 + 1*H2_1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+<span class="n">solver_name</span> <span class="o">=</span> <span class="s2">&quot;simple&quot;</span>
+<span class="n">use_omp</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">use_cvode</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">use_suitesparse</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># specify the library path</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HDF5_DIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/anaconda3&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CVODE_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/data/dengo-merge/cvode-5.3.0/instdir&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HDF5_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/anaconda3&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SUITESPARSE_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/data/dengo-merge/suitesparse&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DENGO_INSTALL_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/dengo/dengo_install&quot;</span>
+
+<span class="c1"># write the solver</span>
+<span class="c1"># cn_simple.write_solver(solver_name, output_dir=output_dir,</span>
+<span class="c1">#                 solver_template=&quot;be_chem_solve/rates_and_rate_tables&quot;,</span>
+<span class="c1">#                 ode_solver_source=&quot;BE_chem_solve.C&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># install the library</span>
+<span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">setup_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_dirs&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">get_include</span><span class="p">()},</span>
+                  <span class="n">reload_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(None, &lt;pyximport.pyximport.PyxImporter at 0x7f701927ce20&gt;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compile a BE chem solve one</span>
+<span class="n">solver_nameBE</span> <span class="o">=</span> <span class="s2">&quot;simpleBE&quot;</span>
+<span class="n">cn_simple</span><span class="o">.</span><span class="n">write_solver</span><span class="p">(</span><span class="n">solver_nameBE</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+                <span class="n">solver_template</span><span class="o">=</span><span class="s2">&quot;be_chem_solve/rates_and_rate_tables&quot;</span><span class="p">,</span>
+                <span class="n">ode_solver_source</span><span class="o">=</span><span class="s2">&quot;BE_chem_solve.C&quot;</span><span class="p">)</span>
+<span class="n">simple_solver_run_beChem</span> <span class="o">=</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_solver_run&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver_nameBE</span><span class="p">),</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_solver_run.pyx&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver_nameBE</span><span class="p">),</span>
+    <span class="n">build_inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pyxbuild_dir</span><span class="o">=</span><span class="s2">&quot;_dengo_temp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/gv0/homes/kwoksun2/dengo-merge/dengo/primordial_rates.py:110: RuntimeWarning: overflow encountered in exp
+  vals = (1.54e-9*(1.+0.3/np.exp(8.099328789667/state.tev))
+/mnt/gv0/homes/kwoksun2/dengo-merge/dengo/primordial_rates.py:111: RuntimeWarning: overflow encountered in exp
+  / (np.exp(40.49664394833662/state.tev)*state.tev**1.5)
+/mnt/gv0/homes/kwoksun2/dengo-merge/dengo/primordial_cooling.py:317: RuntimeWarning: overflow encountered in power
+  vals[_i2] = 10.0**(-21.928796 \
+/mnt/gv0/homes/kwoksun2/dengo-merge/dengo/primordial_cooling.py:341: RuntimeWarning: overflow encountered in power
+  vals = 10.0**(-20.584225
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/kwoksun2/anaconda3/lib/python3.8/site-packages/Cython/Compiler/Main.py:369: FutureWarning: Cython directive &#39;language_level&#39; not set, using 2 for now (Py2). This will change in a later release! File: /mnt/gv0/homes/kwoksun2/dengo-merge/cookbook/simpleBE_solver_run.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>warning: simpleBE_solver_run.pyx:14:13: &#39;_MAX_NCELLS&#39; redeclared 
+warning: simpleBE_solver_run.pyx:15:13: &#39;_NSPECIES&#39; redeclared 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver_nameCV</span> <span class="o">=</span> <span class="s2">&quot;simpleCV&quot;</span>
+<span class="n">cn_simple</span><span class="o">.</span><span class="n">write_solver</span><span class="p">(</span><span class="n">solver_nameCV</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+                <span class="n">solver_template</span><span class="o">=</span><span class="s2">&quot;cv_omp/sundials_CVDls&quot;</span><span class="p">,</span>
+                <span class="n">ode_solver_source</span><span class="o">=</span><span class="s2">&quot;initialize_cvode_solver.C&quot;</span><span class="p">)</span>
+<span class="n">simple_solver_run_CV</span> <span class="o">=</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_solver_run&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver_nameCV</span><span class="p">),</span>
+    <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_solver_run.pyx&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver_nameCV</span><span class="p">),</span>
+    <span class="n">build_inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pyxbuild_dir</span><span class="o">=</span><span class="s2">&quot;_dengo_temp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You have suitesparse!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_initial_conditions</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">h2frac</span><span class="p">,</span> <span class="n">NCELLS</span><span class="p">):</span>
+    <span class="c1"># setting initial conditions</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">NCELLS</span><span class="p">))</span><span class="o">*</span><span class="n">temperature</span>
+    <span class="n">init_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">NCELLS</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span>
+    <span class="n">init_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s2">&quot;H_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="mf">0.76</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">1</span><span class="o">-</span><span class="n">h2frac</span> <span class="p">)</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_m0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;He_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="mf">0.24</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;He_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;He_3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H2_1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="mf">0.76</span> <span class="o">*</span> <span class="n">h2frac</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H2_2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_array</span> <span class="o">*</span> <span class="n">tiny</span>
+
+    <span class="c1"># update and calculate electron density and etc with the handy functions</span>
+    <span class="c1"># init_values = primordial.convert_to_mass_density(init_values)</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">calculate_free_electrons</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+    <span class="c1"># init_values[&#39;density&#39;] = primordial.calculate_total_density(init_values)</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">NCELLS</span><span class="p">))</span><span class="o">*</span><span class="n">density</span>
+    <span class="n">number_density</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">calculate_number_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+
+    <span class="c1"># set up initial temperatures values used to define ge</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">temperature</span>
+
+    <span class="c1"># calculate ge (very crudely, no H2 help here)</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">/</span><span class="mf">3.0</span>
+    <span class="n">mH</span> <span class="o">=</span> <span class="mf">1.67e-24</span>
+    <span class="n">init_values</span><span class="p">[</span><span class="s2">&quot;ge&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">temperature</span> <span class="o">*</span> <span class="n">kboltz</span> <span class="o">/</span> <span class="n">mH</span>
+
+    <span class="k">return</span> <span class="n">init_values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial Conditions</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">1e10</span> <span class="c1"># number density</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">1000.0</span> <span class="c1"># K</span>
+<span class="n">H2Fraction</span>  <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># molecular mass fraction</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># number of cells</span>
+
+<span class="c1"># freefall timescale</span>
+<span class="n">dtf</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">mh</span><span class="o">*</span><span class="n">density</span><span class="p">)</span>
+
+<span class="n">states</span> <span class="o">=</span>  <span class="n">setup_initial_conditions</span><span class="p">(</span><span class="n">cn_simple</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">H2Fraction</span><span class="p">,</span> <span class="n">ncells</span><span class="p">)</span>
+<span class="n">rv</span><span class="p">,</span> <span class="n">rv_intBE</span> <span class="o">=</span> <span class="n">simple_solver_run_beChem</span><span class="o">.</span><span class="n">run_simpleBE</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">dtf</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.0e-5</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (2.995e+05) 2.995e+05 / 2.995e+11
+Successful iteration[  100]: (4.128e+09) 4.540e+10 / 2.995e+11
+End in 121 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial Conditions</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">1e10</span> <span class="c1"># number density</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">1000.0</span> <span class="c1"># K</span>
+<span class="n">H2Fraction</span>  <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># molecular mass fraction</span>
+<span class="n">ncells</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># number of cells</span>
+
+<span class="c1"># freefall timescale</span>
+<span class="n">dtf</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">mh</span><span class="o">*</span><span class="n">density</span><span class="p">)</span>
+
+<span class="n">states</span> <span class="o">=</span>  <span class="n">setup_initial_conditions</span><span class="p">(</span><span class="n">cn_simple</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">H2Fraction</span><span class="p">,</span> <span class="n">ncells</span><span class="p">)</span>
+<span class="n">rv</span><span class="p">,</span> <span class="n">rv_intCV</span> <span class="o">=</span> <span class="n">simple_solver_run_CV</span><span class="o">.</span><span class="n">run_simpleCV</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">dtf</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mf">1e6</span><span class="p">,</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.0e-5</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (2.995e+05) 2.995e+05 / 2.995e+11
+Successful iteration[  100]: (4.128e+09) 4.540e+10 / 2.995e+11
+End in 121 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">plot_results</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">rv_int</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s2">&quot;successful&quot;</span><span class="p">]</span>
+    <span class="n">t</span>    <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">][</span><span class="n">flag</span><span class="p">]</span>
+    <span class="n">H2I</span>  <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s2">&quot;H2_1&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">flag</span><span class="p">]</span>
+    <span class="n">HI</span>   <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s2">&quot;H_1&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">flag</span><span class="p">]</span>
+    <span class="n">T</span>    <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;ge&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">flag</span><span class="p">]</span>
+
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">HI</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;HI &#39;</span><span class="o">+</span><span class="n">label</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">H2I</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;H2I &quot;</span> <span class="o">+</span><span class="n">label</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;time (s)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;number density $(\mathrm{cm^{-3}})$&quot;</span><span class="p">)</span>
+    
+    <span class="n">ax2</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span><span class="n">ls</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;temperature (K)&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span> 
+
+<span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plot_results</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">rv_intCV</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;CV&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plot_results</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">rv_intBE</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;BE&#39;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">lines</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">lines2</span><span class="p">,</span> <span class="n">labels2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines</span> <span class="o">+</span> <span class="n">lines2</span><span class="p">,</span> <span class="n">labels</span> <span class="o">+</span> <span class="n">labels2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2e43651fd0&gt;
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_9_1.png" src="_images/be_chem_solve_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract_final_step(rv_intBE), </span>
+<span class="n">extract_final_step</span><span class="p">(</span><span class="n">rv_intCV</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_19272</span><span class="o">/</span><span class="mf">3621093141.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># extract_final_step(rv_intBE),</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">extract_final_step</span><span class="p">(</span><span class="n">rv_intCV</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;extract_final_step&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extract_final_step</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;successful&#39;</span><span class="p">]</span>
+    <span class="n">skip</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;successful&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;dt&#39;</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">skip</span><span class="p">:</span> <span class="k">continue</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">flag</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">out</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">flag</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="c1"># extract_final_step(rv_intBE)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_grid</span><span class="p">(</span><span class="n">solver</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">temperature</span><span class="p">,</span> <span class="n">h2frac</span><span class="p">):</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">density</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">temperature</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">h2frac</span><span class="p">:</span>
+                <span class="n">init_values</span> <span class="o">=</span> <span class="n">setup_initial_conditions</span><span class="p">(</span><span class="n">cn_simple</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">dtf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">mh</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>
+                <span class="n">rv</span><span class="p">,</span> <span class="n">rv_int</span> <span class="o">=</span> <span class="n">solver</span><span class="p">(</span><span class="n">init_values</span><span class="p">,</span> <span class="n">dtf</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mf">1e4</span><span class="p">,</span> <span class="n">reltol</span> <span class="o">=</span> <span class="mf">1.0e-5</span><span class="p">)</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extract_final_step</span><span class="p">(</span><span class="n">rv_int</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">darray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">tarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">h2frac</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="mf">1.0e-5</span><span class="p">,</span> <span class="mf">1.0e-4</span><span class="p">]</span>
+<span class="n">cv_grid</span> <span class="o">=</span> <span class="n">run_grid</span><span class="p">(</span><span class="n">simple_solver_run_CV</span><span class="o">.</span><span class="n">run_simpleCV</span><span class="p">,</span> <span class="n">darray</span><span class="p">,</span> <span class="n">tarray</span><span class="p">,</span> <span class="n">h2frac</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">darray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">tarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">h2frac</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0e-6</span><span class="p">,</span> <span class="mf">1.0e-5</span><span class="p">,</span> <span class="mf">1.0e-4</span><span class="p">]</span>
+<span class="n">be_grid</span> <span class="o">=</span> <span class="n">run_grid</span><span class="p">(</span><span class="n">simple_solver_run_beChem</span><span class="o">.</span><span class="n">run_simpleBE</span><span class="p">,</span> <span class="n">darray</span><span class="p">,</span> <span class="n">tarray</span><span class="p">,</span> <span class="n">h2frac</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (2.995e+11) 2.995e+11 / 2.995e+15
+End in 73 iterations: 2.99536e+15 / 2.99536e+15 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+10) 9.472e+10 / 9.472e+14
+End in 73 iterations: 9.47215e+14 / 9.47215e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (2.995e+10) 2.995e+10 / 2.995e+14
+End in 73 iterations: 2.99536e+14 / 2.99536e+14 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+09) 9.472e+09 / 9.472e+13
+End in 73 iterations: 9.47215e+13 / 9.47215e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (2.995e+09) 2.995e+09 / 2.995e+13
+End in 73 iterations: 2.99536e+13 / 2.99536e+13 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+08) 9.472e+08 / 9.472e+12
+End in 73 iterations: 9.47215e+12 / 9.47215e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (2.995e+08) 2.995e+08 / 2.995e+12
+End in 73 iterations: 2.99536e+12 / 2.99536e+12 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+07) 9.472e+07 / 9.472e+11
+End in 73 iterations: 9.47215e+11 / 9.47215e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (2.995e+07) 2.995e+07 / 2.995e+11
+End in 73 iterations: 2.99536e+11 / 2.99536e+11 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (9.472e+06) 9.472e+06 / 9.472e+10
+End in 73 iterations: 9.47215e+10 / 9.47215e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+Successful iteration[    0]: (2.995e+06) 2.995e+06 / 2.995e+10
+End in 73 iterations: 2.99536e+10 / 2.99536e+10 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reshape_grid</span><span class="p">(</span><span class="n">grid</span><span class="p">):</span>
+    <span class="n">keys</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span> <span class="n">out</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">grid</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">out</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">out</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">be_grid_</span> <span class="o">=</span><span class="n">reshape_grid</span><span class="p">(</span><span class="n">be_grid</span><span class="p">)</span>
+<span class="n">cv_grid_</span> <span class="o">=</span><span class="n">reshape_grid</span><span class="p">(</span><span class="n">cv_grid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cv_grid_</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">ratio</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">be_grid_</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">/</span> <span class="n">cv_grid_</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">be_grid_</span><span class="p">[</span><span class="s1">&#39;H2_1&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">cv_grid_</span><span class="p">[</span><span class="s1">&#39;H2_1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000180e+00, 1.00000182e+00, 1.00000020e+00, 1.00702080e+00,
+       1.00344939e+00, 1.00035064e+00, 3.19727307e+02, 3.22410642e+03,
+       1.09859092e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000926e+00, 1.00000192e+00, 1.00000020e+00,
+       1.02673421e+00, 1.00347694e+00, 1.00035427e+00, 1.00907779e+00,
+       1.11702021e+00, 1.10104618e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00001860e+00, 1.00000196e+00,
+       1.00000020e+00, 1.04363940e+00, 1.00359337e+00, 1.00036757e+00,
+       1.00745176e+00, 1.11401454e+00, 1.11362953e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000001e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000001e+00, 1.00000001e+00, 1.00000000e+00,
+       1.00000003e+00, 1.00000001e+00, 1.00000000e+00, 1.00002415e+00,
+       1.00000246e+00, 1.00000026e+00, 1.05714060e+00, 1.00462988e+00,
+       1.00050295e+00, 1.00620728e+00, 1.09926190e+00, 1.18231658e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000000e+00,
+       1.00000000e+00, 1.00000000e+00, 1.00000000e+00, 1.00000001e+00,
+       1.00000001e+00, 1.00000002e+00, 1.00000003e+00, 1.00000002e+00,
+       1.00000007e+00, 1.00000006e+00, 1.00000003e+00, 1.00000019e+00,
+       1.00000012e+00, 1.00000003e+00, 1.00000055e+00, 1.00000019e+00,
+       1.00000004e+00, 1.00000112e+00, 1.00000024e+00, 1.00000004e+00,
+       1.00005237e+00, 1.00000553e+00, 1.00000071e+00, 1.17849783e+00,
+       1.01053704e+00, 1.00133518e+00, 1.00232443e+00, 1.03043850e+00,
+       1.46119464e+01, 1.00000001e+00, 1.00000001e+00, 1.00000001e+00,
+       1.00000005e+00, 1.00000004e+00, 1.00000004e+00, 1.00000011e+00,
+       1.00000013e+00, 1.00000013e+00, 1.00000026e+00, 1.00000031e+00,
+       1.00000028e+00, 1.00000069e+00, 1.00000076e+00, 1.00000052e+00,
+       1.00000234e+00, 1.00000213e+00, 1.00000078e+00, 1.00000851e+00,
+       1.00000442e+00, 1.00000091e+00, 1.00002187e+00, 1.00000630e+00,
+       1.00000095e+00, 1.00034380e+00, 1.00003825e+00, 1.00000458e+00,
+       1.14973214e+00, 1.08754172e+00, 1.00763626e+00, 1.00032465e+00,
+       1.00336374e+00, 1.03969979e+00, 1.00000010e+00, 1.00000013e+00,
+       1.00000011e+00, 1.00000046e+00, 1.00000043e+00, 1.00000050e+00,
+       1.00000104e+00, 1.00000140e+00, 1.00000133e+00, 1.00000246e+00,
+       1.00000326e+00, 1.00000295e+00, 1.00000701e+00, 1.00000848e+00,
+       1.00000724e+00, 1.00002395e+00, 1.00002502e+00, 1.00001474e+00,
+       1.00009075e+00, 1.00007215e+00, 1.00002151e+00, 1.00026941e+00,
+       1.00013738e+00, 1.00002470e+00, 1.00302081e+00, 1.00047677e+00,
+       1.00005613e+00, 1.01003165e+00, 1.15870410e+00, 1.08483236e+00,
+       1.00004098e+00, 1.00039446e+00, 1.00407337e+00, 1.00000007e+00,
+       1.00000066e+00, 1.00000113e+00, 9.99994208e-01, 9.99999737e-01,
+       1.00000441e+00, 9.99996502e-01, 1.00000639e+00, 1.00001256e+00,
+       1.00001132e+00, 1.00002456e+00, 1.00003054e+00, 1.00004404e+00,
+       1.00007266e+00, 1.00007860e+00, 1.00015291e+00, 1.00023786e+00,
+       1.00021515e+00, 1.00058384e+00, 1.00074265e+00, 1.00043711e+00,
+       1.00178178e+00, 1.00191799e+00, 1.00061520e+00, 1.01106119e+00,
+       1.00572019e+00, 1.00099342e+00, 1.00275390e+00, 1.01177853e+00,
+       1.16557863e+00, 1.00001539e+00, 1.00010009e+00, 1.00095302e+00,
+       9.99953637e-01, 9.99955563e-01, 9.99969090e-01, 9.99376607e-01,
+       9.99400865e-01, 9.99573356e-01, 9.99632368e-01, 9.99654166e-01,
+       9.99799320e-01, 9.99891757e-01, 9.99913471e-01, 1.00005103e+00,
+       1.00025801e+00, 1.00029229e+00, 1.00048776e+00, 1.00121601e+00,
+       1.00131995e+00, 1.00171389e+00, 1.00399879e+00, 1.00420209e+00,
+       1.00453638e+00, 1.00951624e+00, 1.00969978e+00, 1.00813322e+00,
+       1.02137557e+00, 1.02046146e+00, 1.01274536e+00, 1.00621704e+00,
+       1.00722737e+00, 1.01850789e+00, 1.00002536e+00, 1.00008320e+00,
+       1.00066384e+00, 9.75935372e-01, 9.75954863e-01, 9.76223316e-01,
+       9.84284364e-01, 9.84305944e-01, 9.84518780e-01, 9.89767178e-01,
+       9.89784531e-01, 9.89955914e-01, 9.94478715e-01, 9.94493718e-01,
+       9.94642359e-01, 9.99433471e-01, 9.99447943e-01, 9.99590094e-01,
+       1.00610355e+00, 1.00611507e+00, 1.00623542e+00, 1.01397276e+00,
+       1.01395748e+00, 1.01393201e+00, 1.02065367e+00, 1.02062192e+00,
+       1.02027650e+00, 1.02744271e+00, 1.02736712e+00, 1.02644930e+00,
+       1.02249098e+00, 1.02277978e+00, 1.02573196e+00, 1.00006605e+00,
+       1.00012119e+00, 1.00067516e+00, 9.74696853e-01, 9.74693459e-01,
+       9.74715555e-01, 9.78329087e-01, 9.78331434e-01, 9.78352401e-01,
+       9.82654066e-01, 9.82655875e-01, 9.82672109e-01, 9.87673204e-01,
+       9.87678021e-01, 9.87692896e-01, 9.92995052e-01, 9.92996592e-01,
+       9.93010018e-01, 9.97861763e-01, 9.97863104e-01, 9.97865808e-01,
+       1.00155635e+00, 1.00155992e+00, 1.00155579e+00, 1.00403661e+00,
+       1.00403614e+00, 1.00402331e+00, 1.00628612e+00, 1.00628420e+00,
+       1.00625616e+00, 1.07227788e+00, 1.07255967e+00, 1.07542954e+00,
+       1.00017778e+00, 1.00023194e+00, 1.00078526e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">ratio</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ratio</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">)[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">tarray</span><span class="p">,</span> <span class="n">darray</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">err</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2_1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_19272/567094959.py:4: MatplotlibDeprecationWarning: shading=&#39;flat&#39; when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading=&#39;auto&#39;, &#39;nearest&#39; or &#39;gouraud&#39;, or set rcParams[&#39;pcolor.shading&#39;].  This will become an error two minor releases later.
+  plt.pcolormesh(tarray, darray, np.log10(err), vmin=-3, vmax=0, cmap=&#39;jet&#39;)
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_2.png" src="_images/be_chem_solve_19_2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H2_2
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_4.png" src="_images/be_chem_solve_19_4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_1
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_6.png" src="_images/be_chem_solve_19_6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_2
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_8.png" src="_images/be_chem_solve_19_8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_m0
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_10.png" src="_images/be_chem_solve_19_10.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He_1
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_12.png" src="_images/be_chem_solve_19_12.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He_2
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_14.png" src="_images/be_chem_solve_19_14.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>He_3
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_16.png" src="_images/be_chem_solve_19_16.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>de
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_18.png" src="_images/be_chem_solve_19_18.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ge
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_20.png" src="_images/be_chem_solve_19_20.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_22.png" src="_images/be_chem_solve_19_22.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>t
+</pre></div>
+</div>
+<img alt="_images/be_chem_solve_19_24.png" src="_images/be_chem_solve_19_24.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ratio</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">3</span><span class="p">)[:,:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">1e-12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sunny Tang<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

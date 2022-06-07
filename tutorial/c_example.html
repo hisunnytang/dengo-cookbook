@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building Dengo Library &#8212; Dengo Cookbook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dengo Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing.html">
+   Welcom to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Build Your Own Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="buildingblocks/SimpleNetwork.html">
+   A Chemistry Solver from Scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/CreateSpecies.html">
+     Creating a New Chemical Species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/CreateReaction.html">
+     Creating Reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/CreateCoolingFunction.html">
+     Create Cooling Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/CreateANetwork.html">
+     Creating a Network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/BuildingSolverWithDengo.html">
+     Building A ODE solver
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Make use of Templates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="buildingblocks/solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="buildingblocks/dengo_writesolver.html">
+   Making Use of Dengo templates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/dengo_cython.html">
+     Build Cython Module from Templates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="buildingblocks/dengo_buildClib.html">
+     Build C-library
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../api.html">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tutorial/c_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/tutorial/c_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-templates-with-chemicalnetwork-write-solver">
+   Generate templates with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ChemicalNetwork.write_solver
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#main-components-that-drives-dengo-c-solver">
+     Main components that drives
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Dengo
+      </span>
+     </code>
+     C-solver
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-function-to-compile-dengo-c-files-for-python-wrapper">
+     Helper function to compile
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Dengo
+      </span>
+     </code>
+     C files for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Python
+      </span>
+     </code>
+     wrapper
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-libraries-and-create-the-network">
+   Import Libraries and Create the Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-cython-module">
+   Build Cython Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Main components that drives
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Dengo
+    </span>
+   </code>
+   C-solver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solver-name-solver-main-c">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     {{solver_name}}_solver_main.C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-c-library">
+   Build C-library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Building Dengo Library</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-templates-with-chemicalnetwork-write-solver">
+   Generate templates with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ChemicalNetwork.write_solver
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#main-components-that-drives-dengo-c-solver">
+     Main components that drives
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Dengo
+      </span>
+     </code>
+     C-solver
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#helper-function-to-compile-dengo-c-files-for-python-wrapper">
+     Helper function to compile
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Dengo
+      </span>
+     </code>
+     C files for
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Python
+      </span>
+     </code>
+     wrapper
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-libraries-and-create-the-network">
+   Import Libraries and Create the Network
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-cython-module">
+   Build Cython Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Main components that drives
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Dengo
+    </span>
+   </code>
+   C-solver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#solver-name-solver-main-c">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     {{solver_name}}_solver_main.C
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-c-library">
+   Build C-library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="building-dengo-library">
+<h1>Building Dengo Library<a class="headerlink" href="#building-dengo-library" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we will walk through how to build the C library with the template provided in <code class="docutils literal notranslate"><span class="pre">dengo.templates</span></code>. This is particularly useful when one wants to extend the solver to solve the chemistry alongside hydrodynamical simulations like <code class="docutils literal notranslate"><span class="pre">enzo</span></code>.</p>
+<p>In this example, we will stick with the 2-species primordial chemistry model we used in the last two chapters.</p>
+<div class="section" id="generate-templates-with-chemicalnetwork-write-solver">
+<h2>Generate templates with <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.write_solver</span></code><a class="headerlink" href="#generate-templates-with-chemicalnetwork-write-solver" title="Permalink to this headline">¶</a></h2>
+<p>With the <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork</span></code> object, <code class="docutils literal notranslate"><span class="pre">Dengo</span></code> can write the C solver.
+The corresponding auxillary library paths are needed to be set as the <strong>environomental variables</strong>, in order to compile our python modules.</p>
+<ul class="simple">
+<li><p><font color='green'>HDF5_DIR </font>          (HDF5 installation path)</p></li>
+<li><p><font color='green'>CVODE_PATH </font>        (CVode installation path)</p></li>
+<li><p><font color='green'>SUITESPARSE_PATH </font>  (SuiteSparse library which is optional unless we use <code class="docutils literal notranslate"><span class="pre">KLU</span></code> option)</p></li>
+<li><p><font color='green'> DENGO_INSTALL_PATH</font> (Installation Path of Dengo)</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.write_solver</span></code> writes serveral files</p>
+<div class="section" id="main-components-that-drives-dengo-c-solver">
+<h3>Main components that drives <code class="docutils literal notranslate"><span class="pre">Dengo</span></code> C-solver<a class="headerlink" href="#main-components-that-drives-dengo-c-solver" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><font color='blue'>_solver.h </font></p></li>
+<li><p><font color='blue'>_solver.C </font>(major modules in Dengo)</p></li>
+<li><p><font color='blue'>_solver_main.h </font></p></li>
+<li><p><font color='blue'>_solver_main.C </font>(example script to use the C library)</p></li>
+<li><p><font color='blue'>initialize_cvode_solver.C </font>(wrapper function for the CVode library)</p></li>
+<li><p><font color='blue'>Makefile </font>(to compile the dengo library <code class="docutils literal notranslate"><span class="pre">libdengo.a</span></code>)</p></li>
+</ul>
+</div>
+<div class="section" id="helper-function-to-compile-dengo-c-files-for-python-wrapper">
+<h3>Helper function to compile <code class="docutils literal notranslate"><span class="pre">Dengo</span></code> C files for <code class="docutils literal notranslate"><span class="pre">Python</span></code> wrapper<a class="headerlink" href="#helper-function-to-compile-dengo-c-files-for-python-wrapper" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><font color='blue'>_solver_run.pyxbld </font></p></li>
+<li><p><font color='blue'>_solver_run.pyxdep </font></p></li>
+<li><p><font color='blue'>_solver_run.pxd </font></p></li>
+<li><p><font color='blue'>_solver_run.pyx </font> (major Python wrapper)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="import-libraries-and-create-the-network">
+<h2>Import Libraries and Create the Network<a class="headerlink" href="#import-libraries-and-create-the-network" title="Permalink to this headline">¶</a></h2>
+<p>Primordial rates and cooling for the 9-species network are included in the default dengo library in <code class="docutils literal notranslate"><span class="pre">dengo.primordial_rates</span></code> and <code class="docutils literal notranslate"><span class="pre">dengo.primordial_cooling</span></code>. The reactions and cooling are added automatically to the <code class="docutils literal notranslate"><span class="pre">reaction_registry</span></code>, <code class="docutils literal notranslate"><span class="pre">cooling_registry</span></code> and <code class="docutils literal notranslate"><span class="pre">species_registry</span></code> with the call to <code class="docutils literal notranslate"><span class="pre">dengo.primordial_rates.setup_primordial</span></code>.  Here we setup the same sample network we demonstrated in the last chapter with <code class="docutils literal notranslate"><span class="pre">k01</span></code>, <code class="docutils literal notranslate"><span class="pre">k02</span></code> and <code class="docutils literal notranslate"><span class="pre">reHII</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dengo</span>
+<span class="kn">from</span> <span class="nn">dengo.chemical_network</span> <span class="kn">import</span> \
+ <span class="n">ChemicalNetwork</span><span class="p">,</span> \
+ <span class="n">reaction_registry</span><span class="p">,</span> \
+ <span class="n">cooling_registry</span><span class="p">,</span> <span class="n">species_registry</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_rates</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_cooling</span>
+
+<span class="n">dengo</span><span class="o">.</span><span class="n">primordial_rates</span><span class="o">.</span><span class="n">setup_primordial</span><span class="p">()</span>
+
+<span class="n">simpleNetwork</span> <span class="o">=</span> <span class="n">ChemicalNetwork</span><span class="p">()</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k01&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k02&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHII&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">init_temperature</span><span class="p">((</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding reaction: k01 : 1*H_1 + 1*de =&gt; 1*H_2 + 2*de
+Adding reaction: k02 : 1*H_2 + 1*de =&gt; 1*H_1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simpleNetwork</span><span class="o">.</span><span class="n">write_solver</span><span class="p">(</span>
+    <span class="s2">&quot;simple&quot;</span><span class="p">,</span> <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> 
+    <span class="n">solver_template</span> <span class="o">=</span> <span class="s2">&quot;cv_omp/sundials_CVDls&quot;</span><span class="p">,</span> 
+    <span class="n">ode_solver_source</span> <span class="o">=</span> <span class="s2">&quot;initialize_cvode_solver.C&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="build-cython-module">
+<h2>Build Cython Module<a class="headerlink" href="#build-cython-module" title="Permalink to this headline">¶</a></h2>
+<p>The solver templates come with a <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> files that lets you build a python interface to the C-library.
+In the below we show how the cython module can be built and used.
+<code class="docutils literal notranslate"><span class="pre">{solver_name}_solver_run.run_{solver_name}(init_values,</span> <span class="pre">dt,</span> <span class="pre">niter)</span></code> is the entry point for the built solver.
+It takes an dictionary that contains the abundances, and thermal energy, an <span class="math notranslate nohighlight">\(dt\)</span>, time to advance the fluid parcel, and <code class="docutils literal notranslate"><span class="pre">niter</span></code> the maximum number of iterations as arguments.
+It assumes that abundances are in number density with the units of <span class="math notranslate nohighlight">\(\rm cm^{-3}\)</span>, and thermal energy in <span class="math notranslate nohighlight">\(erg/g\)</span>. <code class="docutils literal notranslate"><span class="pre">niter</span></code> implicitly sets the initial timestep for the solver, i.e. <span class="math notranslate nohighlight">\(df_{solver} = df/ \rm niter\)</span>.
+Our <code class="docutils literal notranslate"><span class="pre">cython</span></code> module gives the same trajectories as what we had done from scratch with the previous chapters!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyximport</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">(</span>
+    <span class="n">setup_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_dirs&quot;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">get_include</span><span class="p">()},</span>
+    <span class="n">reload_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">language_level</span><span class="o">=</span><span class="mi">3</span>
+<span class="p">)</span>
+
+<span class="n">simple_solver_run</span> <span class="o">=</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span>
+    <span class="s2">&quot;simple_solver_run&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;simple_solver_run.pyx&quot;</span><span class="p">,</span>
+    <span class="n">build_inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+    <span class="n">pyxbuild_dir</span> <span class="o">=</span> <span class="s2">&quot;_dengo_temp&quot;</span><span class="p">,</span> 
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You have suitesparse!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/kwoksun2/anaconda3/lib/python3.8/site-packages/Cython/Compiler/Main.py:369: FutureWarning: Cython directive &#39;language_level&#39; not set, using 2 for now (Py2). This will change in a later release! File: /mnt/gv0/homes/kwoksun2/dengo-merge/cookbook/tutorial/simple_solver_run.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NCELLS</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">1e-2</span>
+
+<span class="n">init_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">NCELLS</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span>
+<span class="n">init_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_1&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_2&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;ge&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">NCELLS</span><span class="p">)</span><span class="o">*</span><span class="mf">1e13</span>
+
+<span class="n">total_density</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_total_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">convert_to_mass_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_free_electrons</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_total_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">number_density</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_number_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+
+<span class="n">rv</span><span class="p">,</span> <span class="n">rv_int</span> <span class="o">=</span> <span class="n">simple_solver_run</span><span class="o">.</span><span class="n">run_simple</span><span class="p">(</span><span class="n">init_values</span><span class="p">,</span> <span class="mf">1e16</span><span class="p">,</span> <span class="n">niter</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (1.000e+11) 1.000e+11 / 1.000e+16
+End in 97 iterations: 1.00000e+16 / 1.00000e+16 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">flags</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">sp_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">simpleNetwork</span><span class="o">.</span><span class="n">required_species</span><span class="p">)]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">sp_names</span><span class="p">),</span><span class="nb">sum</span><span class="p">(</span><span class="n">flags</span><span class="p">)))</span>
+                  
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sp_names</span><span class="p">):</span>
+    <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="n">s</span><span class="p">][:,</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">H_1_traj</span><span class="p">,</span> <span class="n">H_2_traj</span><span class="p">,</span> <span class="n">de_traj</span><span class="p">,</span> <span class="n">ge_traj</span> <span class="o">=</span> <span class="n">output</span>
+<span class="n">T_traj</span>    <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">flags</span><span class="p">]</span>
+<span class="n">timesteps</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">flags</span><span class="p">]</span>
+
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">l1</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">H_1_traj</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">H_2_traj</span><span class="p">)</span>
+<span class="n">l3</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">de_traj</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">l4</span><span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">T_traj</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C3&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Abundance ($\rm cm^{-3}$)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature (K)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">l3</span><span class="p">,</span><span class="n">l4</span><span class="p">],</span> 
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\rm H$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm H^+$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm e^-$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm T$&#39;</span><span class="p">],</span>
+    <span class="n">loc</span><span class="o">=</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.4</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">right</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1477/4291065558.py:27: UserWarning: You have mixed positional and keyword arguments, some input may be discarded.
+  f.legend(
+</pre></div>
+</div>
+<img alt="../_images/c_example_8_11.png" src="../_images/c_example_8_11.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Main components that drives <code class="docutils literal notranslate"><span class="pre">Dengo</span></code> C-solver<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>In brief, similar to the example we shown before with the python RHS function, the C templates generate primarily solvers</p>
+<ul class="simple">
+<li><p><font color='blue'>_solver.h </font></p></li>
+<li><p><font color='blue'>_solver.C </font>(major modules in Dengo)</p></li>
+<li><p><font color='blue'>_solver_main.h </font></p></li>
+<li><p><font color='blue'>_solver_main.C </font>(example script to use the C library)</p></li>
+<li><p><font color='blue'>initialize_cvode_solver.C </font>(wrapper function for the CVode library)</p></li>
+<li><p><font color='blue'>Makefile </font>(to compile the dengo library <code class="docutils literal notranslate"><span class="pre">libdengo.a</span></code>)</p></li>
+</ul>
+</div>
+<div class="section" id="solver-name-solver-main-c">
+<h2><code class="docutils literal notranslate"><span class="pre">{{solver_name}}_solver_main.C</span></code><a class="headerlink" href="#solver-name-solver-main-c" title="Permalink to this headline">¶</a></h2>
+<p>An example usage of the built dengo library can be found in the <code class="docutils literal notranslate"><span class="pre">{{solver_name}}_solver_main.C</span></code>. The solver is accessed through</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">simple_solve_chemistry_enzo</span><span class="p">(</span><span class="w"> </span><span class="n">code_units</span><span class="w"> </span><span class="o">*</span><span class="n">units</span><span class="p">,</span><span class="w"> </span><span class="n">dengo_field_data</span><span class="w"> </span><span class="o">*</span><span class="n">field_data</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This API follows closely the <code class="docutils literal notranslate"><span class="pre">Grackle</span></code> solver <code class="docutils literal notranslate"><span class="pre">solver_chemistry</span></code> which is tailored to work with <code class="docutils literal notranslate"><span class="pre">Enzo</span></code> simulations. <code class="docutils literal notranslate"><span class="pre">dengo_field_data</span></code> is a data structure that points to the respective abundance pointer <code class="docutils literal notranslate"><span class="pre">{species.name}_density</span></code>. It also informs the setup of the incoming grid. <code class="docutils literal notranslate"><span class="pre">code_units</span></code> informs the dengo solver how to convert from code_units into physical cgs units. <code class="docutils literal notranslate"><span class="pre">dt</span></code> is the delta time the user want to advance the system for. The structure definition taken from <code class="docutils literal notranslate"><span class="pre">{{solver_name}}_solver.h</span></code> are shown below.
+<code class="docutils literal notranslate"><span class="pre">dengo_field_data.CoolingTime</span></code>, <code class="docutils literal notranslate"><span class="pre">dengo_field_data.MolecularWeight</span></code>, <code class="docutils literal notranslate"><span class="pre">dengo_field_data.temperature</span></code>, <code class="docutils literal notranslate"><span class="pre">dengo_field_data.Gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">dengo_field_data.Pressure</span></code> are <strong>not</strong> required inputs. User however needs to allocate space to these pointers if one want Dengo to compute these quantities alongside the chemical evolution. <code class="docutils literal notranslate"><span class="pre">dengo_data_file</span></code> points to the reaction rates <code class="docutils literal notranslate"><span class="pre">hdf5</span></code> data for on-the-fly interpolations.</p>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">dengo_field_data</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nstrip</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ncells</span><span class="p">;</span><span class="w"> </span>
+<span class="w">  </span><span class="c1">// let&#39;s just pass them passively through field_data</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">reltol</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">floor_value</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// This should be updated dynamically </span>
+<span class="w">  </span><span class="c1">// with dengo</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">density</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">H_1_density</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">H_2_density</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">de_density</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">ge_density</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">CoolingTime</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">MolecularWeight</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">temperature</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">Gamma</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">Pressure</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">grid_start</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">grid_end</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">grid_dimension</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">dengo_data_file</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">code_units</span><span class="w"> </span><span class="o">*</span><span class="n">units</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">dengo_field_data</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">code_units</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">comoving_coordinates</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">density_units</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">length_units</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">time_units</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">velocity_units</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">a_units</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">a_value</span><span class="p">;</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"> </span><span class="n">code_units</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="build-c-library">
+<h2>Build C-library<a class="headerlink" href="#build-c-library" title="Permalink to this headline">¶</a></h2>
+<p>This template comes with a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> that lets the user to compile the library. Apart from specifying the <code class="docutils literal notranslate"><span class="pre">CVODE_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">SUITESPARSE_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">DENGO_INSTALL_PATH</span></code>, <code class="docutils literal notranslate"><span class="pre">HDF5_PATH</span></code>, there are additional options the user can choose. One can choose either the <code class="docutils literal notranslate"><span class="pre">CVDLS</span></code> which refers to the CVODE dense linear solver, or <code class="docutils literal notranslate"><span class="pre">CVKLU</span></code> which refers to the CVODE KLU Sparse solver. <code class="docutils literal notranslate"><span class="pre">CVKLU</span></code> is oftentimes preferred as it leverages the emptyness in the Jacobian matrix, and utilizes the SuiteSparse library to perform the newton iterations. <code class="docutils literal notranslate"><span class="pre">DENGO_INSTALL_PATH</span></code> is where the library will be installed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the Dense Linear Solver interface (CVDLS)</span>
+<span class="c1">#OPTIONS+= -DMAX_NCELLS=1</span>
+<span class="c1"># Use the Sparse KLU direct solver</span>
+<span class="n">OPTIONS</span> <span class="o">=</span> <span class="o">-</span><span class="n">DCVKLU</span> <span class="o">-</span><span class="n">DMAX_NCELLS</span><span class="o">=</span><span class="mi">256</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Make</span></code> script uses <code class="docutils literal notranslate"><span class="pre">libtool</span></code> to compile the files and build the libraries. The command <code class="docutils literal notranslate"><span class="pre">Make</span></code> would build and install the libraries.
+Now you have built a <code class="docutils literal notranslate"><span class="pre">libdengo.so</span></code> in your specified installed path, and you are ready to link it to your favorite program with the sample below, or checkout the <code class="docutils literal notranslate"><span class="pre">Makefile:run_dengo</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$(CC) -o $@ $^ $(OPTIONS) -I$(DENGO_INSTALL_PATH)/include -I$(CVODE_PATH)/include -I$(INCLUDES_KLU) -I$(HDF5_PATH)/include -L$(HDF5_PATH)/lib -lhdf5_hl -lhdf5 -L$(DENGO_INSTALL_PATH)/lib -ldengo -lm
+</pre></div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>We outlie how <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.write_solver</span></code> works.</p></li>
+<li><p>How to build the cython module from the templates generated.</p></li>
+<li><p>We also outline how the C-library can be built.</p></li>
+</ol>
+<p>In the next chapter, we will outline the procedures needed to link hydrodynamical simulations like <code class="docutils literal notranslate"><span class="pre">enzo</span></code> to <code class="docutils literal notranslate"><span class="pre">dengo</span></code>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sunny Tang<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

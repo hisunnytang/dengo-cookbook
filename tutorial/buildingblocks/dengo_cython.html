@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build Cython Module from Templates &#8212; Dengo Cookbook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Build C-library" href="dengo_buildClib.html" />
+    <link rel="prev" title="Making Use of Dengo templates" href="dengo_writesolver.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dengo Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../landing.html">
+   Welcom to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Build Your Own Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="SimpleNetwork.html">
+   A Chemistry Solver from Scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CreateSpecies.html">
+     Creating a New Chemical Species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CreateReaction.html">
+     Creating Reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CreateCoolingFunction.html">
+     Create Cooling Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CreateANetwork.html">
+     Creating a Network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BuildingSolverWithDengo.html">
+     Building A ODE solver
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Make use of Templates
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="dengo_writesolver.html">
+   Making Use of Dengo templates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Build Cython Module from Templates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dengo_buildClib.html">
+     Build C-library
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api.html">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorial/buildingblocks/dengo_cython.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/tutorial/buildingblocks/dengo_cython.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compile-the-cython-module">
+   Compile the Cython Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#invoking-the-cython-solver">
+   Invoking the Cython Solver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-the-trajectories">
+   Visualize the Trajectories
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Build Cython Module from Templates</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compile-the-cython-module">
+   Compile the Cython Module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#invoking-the-cython-solver">
+   Invoking the Cython Solver
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-the-trajectories">
+   Visualize the Trajectories
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="build-cython-module-from-templates">
+<h1>Build Cython Module from Templates<a class="headerlink" href="#build-cython-module-from-templates" title="Permalink to this headline">¶</a></h1>
+<p>In the last chapter, we used our <code class="docutils literal notranslate"><span class="pre">simpleNework</span></code> to generate 9 files from <code class="docutils literal notranslate"><span class="pre">dengo</span></code>. We outline how can we build the library from here and use cython to invoke the function written in <code class="docutils literal notranslate"><span class="pre">C</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">simpleNetwork_solver</span><span class="o">.</span><span class="n">C</span>	      <span class="n">simpleNetwork_solver_run</span><span class="o">.</span><span class="n">pyx</span>
+<span class="n">simpleNetwork_solver</span><span class="o">.</span><span class="n">h</span>	      <span class="n">simpleNetwork_solver_run</span><span class="o">.</span><span class="n">pyxbld</span>
+<span class="n">simpleNetwork_solver_main</span><span class="o">.</span><span class="n">C</span>   <span class="n">simpleNetwork_solver_run</span><span class="o">.</span><span class="n">pyxdep</span>
+<span class="n">simpleNetwork_solver_main</span><span class="o">.</span><span class="n">py</span>  <span class="n">simpleNetwork_tables</span><span class="o">.</span><span class="n">h5</span>
+<span class="n">simpleNetwork_solver_run</span><span class="o">.</span><span class="n">pxd</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dengo</span>
+<span class="kn">from</span> <span class="nn">dengo.chemical_network</span> <span class="kn">import</span> \
+ <span class="n">ChemicalNetwork</span><span class="p">,</span> \
+ <span class="n">reaction_registry</span><span class="p">,</span> \
+ <span class="n">cooling_registry</span><span class="p">,</span> <span class="n">species_registry</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_rates</span>
+<span class="kn">import</span> <span class="nn">dengo.primordial_cooling</span>
+
+<span class="n">dengo</span><span class="o">.</span><span class="n">primordial_rates</span><span class="o">.</span><span class="n">setup_primordial</span><span class="p">()</span>
+
+<span class="n">simpleNetwork</span> <span class="o">=</span> <span class="n">ChemicalNetwork</span><span class="p">()</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k01&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;k02&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">add_cooling</span><span class="p">(</span><span class="s2">&quot;reHII&quot;</span><span class="p">)</span>
+<span class="n">simpleNetwork</span><span class="o">.</span><span class="n">init_temperature</span><span class="p">((</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding reaction: k01 : 1*H_1 + 1*de =&gt; 1*H_2 + 2*de
+Adding reaction: k02 : 1*H_2 + 1*de =&gt; 1*H_1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="compile-the-cython-module">
+<h2>Compile the Cython Module<a class="headerlink" href="#compile-the-cython-module" title="Permalink to this headline">¶</a></h2>
+<p>The solver templates come with a <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> files that lets you build a python interface to the C-library. A more well-rounded <code class="docutils literal notranslate"><span class="pre">Cython</span></code> tutorial can be found here [Cython Tutorial].(<a class="reference external" href="https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html">https://cython.readthedocs.io/en/latest/src/tutorial/cython_tutorial.html</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyximport</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">solver_name</span> <span class="o">=</span> <span class="s2">&quot;simpleNetwork&quot;</span>
+
+<span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">(</span>
+    <span class="n">setup_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_dirs&quot;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">get_include</span><span class="p">()},</span>
+    <span class="n">reload_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+    <span class="n">language_level</span><span class="o">=</span><span class="mi">3</span>
+<span class="p">)</span>
+
+<span class="n">simple_solver_run</span> <span class="o">=</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2">_solver_run&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2">_solver_run.pyx&quot;</span><span class="p">,</span>
+    <span class="n">build_inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+    <span class="n">pyxbuild_dir</span> <span class="o">=</span> <span class="s2">&quot;_dengo_temp&quot;</span><span class="p">,</span> 
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You have suitesparse!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/kwoksun2/anaconda3/lib/python3.8/site-packages/Cython/Compiler/Main.py:369: FutureWarning: Cython directive &#39;language_level&#39; not set, using 2 for now (Py2). This will change in a later release! File: /mnt/gv0/homes/kwoksun2/dengo-merge/cookbook/tutorial/buildingblocks/simpleNetwork_solver_run.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cc1plus: warning: command line option &#39;-Wstrict-prototypes&#39; is valid for C/ObjC but not for C++
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/pyximport/pyximport.py:216,</span> in <span class="ni">load_module</span><span class="nt">(name, pyxfilename, pyxbuild_dir, is_package, build_inplace, language_level, so_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">so_path</span> <span class="o">=</span> <span class="n">build_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">pyxfilename</span><span class="p">,</span> <span class="n">pyxbuild_dir</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>                            <span class="n">inplace</span><span class="o">=</span><span class="n">build_inplace</span><span class="p">,</span> <span class="n">language_level</span><span class="o">=</span><span class="n">language_level</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">216</span> <span class="n">mod</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_dynamic</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">so_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">if</span> <span class="n">is_package</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="s1">&#39;__path__&#39;</span><span class="p">):</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/imp.py:342,</span> in <span class="ni">load_dynamic</span><span class="nt">(name, path, file)</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">machinery</span><span class="o">.</span><span class="n">ModuleSpec</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="n">loader</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">342</span> <span class="k">return</span> <span class="n">_load</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:702,</span> in <span class="ni">_load</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:657,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:556,</span> in <span class="ni">module_from_spec</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:1101,</span> in <span class="ni">create_module</span><span class="nt">(self, spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:219,</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="ne">ImportError</span>: /mnt/gv0/homes/kwoksun2/dengo-merge/cookbook/tutorial/buildingblocks/simpleNetwork_solver_run.cpython-38-x86_64-linux-gnu.so.reload1: undefined symbol: _Z18setup_cvode_solverPFidP17_generic_N_VectorS0_PvEPFidS0_S0_P18_generic_SUNMatrixS1_S0_S0_S0_EiP18simpleNetwork_dataP24_generic_SUNLinearSolverS5_S0_dS0_
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 12&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">solver_name</span> <span class="o">=</span> <span class="s2">&quot;simpleNetwork&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">setup_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_dirs&quot;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">get_include</span><span class="p">()},</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">reload_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">language_level</span><span class="o">=</span><span class="mi">3</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">simple_solver_run</span> <span class="o">=</span> <span class="n">pyximport</span><span class="o">.</span><span class="n">load_module</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2">_solver_run&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2">_solver_run.pyx&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">build_inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">pyxbuild_dir</span> <span class="o">=</span> <span class="s2">&quot;_dengo_temp&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/pyximport/pyximport.py:231,</span> in <span class="ni">load_module</span><span class="nt">(name, pyxfilename, pyxbuild_dir, is_package, build_inplace, language_level, so_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="n">exc</span> <span class="o">=</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;Building module </span><span class="si">%s</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="n">name</span><span class="p">,</span> <span class="n">traceback</span><span class="o">.</span><span class="n">format_exception_only</span><span class="p">(</span><span class="o">*</span><span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[:</span><span class="mi">2</span><span class="p">])))</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">231</span>     <span class="k">raise</span> <span class="n">exc</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">exec</span><span class="p">(</span><span class="s2">&quot;raise exc, None, tb&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;exc&#39;</span><span class="p">:</span> <span class="n">exc</span><span class="p">,</span> <span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="n">tb</span><span class="p">})</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/pyximport/pyximport.py:216,</span> in <span class="ni">load_module</span><span class="nt">(name, pyxfilename, pyxbuild_dir, is_package, build_inplace, language_level, so_path)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>         <span class="n">module_name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">so_path</span> <span class="o">=</span> <span class="n">build_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">pyxfilename</span><span class="p">,</span> <span class="n">pyxbuild_dir</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>                            <span class="n">inplace</span><span class="o">=</span><span class="n">build_inplace</span><span class="p">,</span> <span class="n">language_level</span><span class="o">=</span><span class="n">language_level</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">216</span> <span class="n">mod</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">load_dynamic</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">so_path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">if</span> <span class="n">is_package</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="s1">&#39;__path__&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="n">mod</span><span class="o">.</span><span class="n">__path__</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">so_path</span><span class="p">)]</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/imp.py:342,</span> in <span class="ni">load_dynamic</span><span class="nt">(name, path, file)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span> <span class="c1"># Issue #24748: Skip the sys.modules check in _load_module_shim;</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="c1"># always load new extension</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">machinery</span><span class="o">.</span><span class="n">ModuleSpec</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">loader</span><span class="o">=</span><span class="n">loader</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">path</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">342</span> <span class="k">return</span> <span class="n">_load</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:702,</span> in <span class="ni">_load</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:657,</span> in <span class="ni">_load_unlocked</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:556,</span> in <span class="ni">module_from_spec</span><span class="nt">(spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap_external&gt;:1101,</span> in <span class="ni">create_module</span><span class="nt">(self, spec)</span>
+
+<span class="nn">File &lt;frozen importlib._bootstrap&gt;:219,</span> in <span class="ni">_call_with_frames_removed</span><span class="nt">(f, *args, **kwds)</span>
+
+<span class="ne">ImportError</span>: Building module simpleNetwork_solver_run failed: [&#39;ImportError: /mnt/gv0/homes/kwoksun2/dengo-merge/cookbook/tutorial/buildingblocks/simpleNetwork_solver_run.cpython-38-x86_64-linux-gnu.so.reload1: undefined symbol: _Z18setup_cvode_solverPFidP17_generic_N_VectorS0_PvEPFidS0_S0_P18_generic_SUNMatrixS1_S0_S0_S0_EiP18simpleNetwork_dataP24_generic_SUNLinearSolverS5_S0_dS0_\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="invoking-the-cython-solver">
+<h2>Invoking the Cython Solver<a class="headerlink" href="#invoking-the-cython-solver" title="Permalink to this headline">¶</a></h2>
+<p>In the below we show how the cython module can be built and used.
+<code class="docutils literal notranslate"><span class="pre">{solver_name}_solver_run.run_{solver_name}(init_values,</span> <span class="pre">dt,</span> <span class="pre">niter)</span></code> is the entry point for the built solver.
+It takes an dictionary that contains the abundances, and thermal energy, an <span class="math notranslate nohighlight">\(\rm dt\)</span>, time to advance the fluid parcel, and <code class="docutils literal notranslate"><span class="pre">niter</span></code> the maximum number of iterations as arguments.
+It assumes that abundances are in number density with the units of <span class="math notranslate nohighlight">\(\rm cm^{-3}\)</span>, and thermal energy in <span class="math notranslate nohighlight">\(\rm erg/g\)</span>. <code class="docutils literal notranslate"><span class="pre">niter</span></code> implicitly sets the initial timestep for the solver, i.e. <span class="math notranslate nohighlight">\(dt_{solver} = \rm dt / \rm niter\)</span>.
+Our <code class="docutils literal notranslate"><span class="pre">cython</span></code> module gives the same trajectories as what we had done from scratch with the previous chapters!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NCELLS</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">density</span> <span class="o">=</span> <span class="mf">1e-2</span>
+
+<span class="n">init_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">NCELLS</span><span class="p">)</span> <span class="o">*</span> <span class="n">density</span>
+<span class="n">init_values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_1&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;H_2&#39;</span><span class="p">]</span>     <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="n">init_array</span> 
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;ge&#39;</span><span class="p">]</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">NCELLS</span><span class="p">)</span><span class="o">*</span><span class="mf">1e13</span>
+
+<span class="n">total_density</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_total_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">convert_to_mass_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_free_electrons</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">init_values</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_total_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+<span class="n">number_density</span> <span class="o">=</span> <span class="n">simpleNetwork</span><span class="o">.</span><span class="n">calculate_number_density</span><span class="p">(</span><span class="n">init_values</span><span class="p">)</span>
+
+<span class="n">rv</span><span class="p">,</span> <span class="n">rv_int</span> <span class="o">=</span> <span class="n">simple_solver_run</span><span class="o">.</span><span class="n">run_simpleNetwork</span><span class="p">(</span><span class="n">init_values</span><span class="p">,</span> <span class="mf">1e16</span><span class="p">,</span> <span class="n">niter</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful iteration[    0]: (1.000e+11) 1.000e+11 / 1.000e+16
+End in 97 iterations: 1.00000e+16 / 1.00000e+16 (0.00000e+00)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-the-trajectories">
+<h2>Visualize the Trajectories<a class="headerlink" href="#visualize-the-trajectories" title="Permalink to this headline">¶</a></h2>
+<p>They match with what we have built from scratch before!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">flags</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">sp_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">simpleNetwork</span><span class="o">.</span><span class="n">required_species</span><span class="p">)]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">sp_names</span><span class="p">),</span><span class="nb">sum</span><span class="p">(</span><span class="n">flags</span><span class="p">)))</span>
+                  
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sp_names</span><span class="p">):</span>
+    <span class="n">output</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="n">s</span><span class="p">][:,</span><span class="n">flags</span><span class="p">]</span>
+
+<span class="n">H_1_traj</span><span class="p">,</span> <span class="n">H_2_traj</span><span class="p">,</span> <span class="n">de_traj</span><span class="p">,</span> <span class="n">ge_traj</span> <span class="o">=</span> <span class="n">output</span>
+<span class="n">T_traj</span>    <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">flags</span><span class="p">]</span>
+<span class="n">timesteps</span> <span class="o">=</span> <span class="n">rv_int</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">flags</span><span class="p">]</span>
+
+
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">l1</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">H_1_traj</span><span class="p">)</span>
+<span class="n">l2</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">H_2_traj</span><span class="p">)</span>
+<span class="n">l3</span><span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">de_traj</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">l4</span><span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">timesteps</span><span class="p">,</span> <span class="n">T_traj</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C3&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Abundance ($\rm cm^{-3}$)&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Temperature (K)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+
+<span class="n">f</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">l3</span><span class="p">,</span><span class="n">l4</span><span class="p">],</span> 
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\rm H$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm H^+$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm e^-$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\rm T$&#39;</span><span class="p">],</span>
+    <span class="n">loc</span><span class="o">=</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.4</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">right</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_22118/4291065558.py:27: UserWarning: You have mixed positional and keyword arguments, some input may be discarded.
+  f.legend(
+</pre></div>
+</div>
+<img alt="../../_images/dengo_cython_7_1.png" src="../../_images/dengo_cython_7_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorial/buildingblocks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="dengo_writesolver.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Making Use of Dengo templates</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="dengo_buildClib.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Build C-library</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sunny Tang<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

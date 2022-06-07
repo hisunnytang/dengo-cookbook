@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dengo.reaction_classes &#8212; My sample book</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../landing.html">
+   Welcom to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Build Your Own Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorial/buildingblocks/SimpleNetwork.html">
+   A Chemistry Solver from Scratch
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Make use of Templates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../tutorial/buildingblocks/solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../api.html">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <h1>Source code for dengo.reaction_classes</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">.chemistry_constants</span> <span class="kn">import</span> <span class="n">tevk</span><span class="p">,</span> <span class="n">tiny</span><span class="p">,</span> <span class="n">mh</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sympy</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">docutils.utils.roman</span> <span class="k">as</span> <span class="nn">roman</span>
+<span class="kn">from</span> <span class="nn">.periodic_table</span> <span class="kn">import</span> \
+    <span class="n">periodic_table_by_name</span><span class="p">,</span> \
+    <span class="n">periodic_table_by_number</span>
+<span class="kn">from</span> <span class="nn">.mixin</span> <span class="kn">import</span> <span class="n">ComparableMixin</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ChiantiPy.core</span> <span class="k">as</span> <span class="nn">ch</span>
+    <span class="n">chu</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># temporary to avoid the check</span>
+    <span class="c1">#import ChiantiPy.util as chu</span>
+<span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+    <span class="n">ch</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">#chu = None</span>
+
+<span class="n">reaction_registry</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">cooling_registry</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">species_registry</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="registry_setup"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.registry_setup">[docs]</a><span class="k">def</span> <span class="nf">registry_setup</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;a decorator function register unseen species,</span>
+<span class="sd">    cooling and reactions into the registry</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">_wfunc</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">old_names</span> <span class="o">=</span> <span class="p">[</span><span class="nb">set</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="p">(</span><span class="n">species_registry</span><span class="p">,</span>
+                                             <span class="n">cooling_registry</span><span class="p">,</span>
+                                             <span class="n">reaction_registry</span><span class="p">)]</span>
+        <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">nn</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">on</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">old_names</span><span class="p">,</span> <span class="p">(</span><span class="n">species_registry</span><span class="p">,</span>
+                                     <span class="n">cooling_registry</span><span class="p">,</span>
+                                     <span class="n">reaction_registry</span><span class="p">)):</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">on</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">nn</span>
+    <span class="k">return</span> <span class="n">_wfunc</span></div>
+
+
+<span class="k">def</span> <span class="nf">ensure_reaction</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">Reaction</span><span class="p">):</span> <span class="k">return</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">reaction_registry</span><span class="p">[</span><span class="n">r</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">ensure_cooling</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">CoolingAction</span><span class="p">):</span> <span class="k">return</span> <span class="n">c</span>
+    <span class="k">return</span> <span class="n">cooling_registry</span><span class="p">[</span><span class="n">c</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">ensure_species</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Species</span><span class="p">):</span> <span class="k">return</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">species_registry</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+
+<span class="n">count_m</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">index_i</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Idx</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="n">count_m</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ReactionCoefficient"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.ReactionCoefficient">[docs]</a><span class="k">class</span> <span class="nc">ReactionCoefficient</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">):</span>
+    <span class="c1">#TODO: the functional derivatives</span>
+    <span class="c1"># sympy.diff() of the sum/ mul of the combination of `ReacionCoefficient` class</span>
+    <span class="c1"># gives zeros....</span>
+    <span class="n">energy</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="s2">&quot;ge&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_eval_derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ReactionCoefficient</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">_eval_derivative</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_eval_derivative_n_times</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_derivative</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+
+    <span class="k">def</span> <span class="nf">diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ReactionCoefficient</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">free_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">free_symbols</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">energy</span><span class="p">]))</span></div>
+
+
+<span class="k">class</span> <span class="nc">Reaction</span><span class="p">(</span><span class="n">ComparableMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">coeff_fn</span><span class="p">,</span> <span class="n">left_side</span><span class="p">,</span> <span class="n">right_side</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coeff_fn</span> <span class="o">=</span> <span class="n">coeff_fn</span>
+        <span class="c1">#self.coeff_sym = sympy.IndexedBase(name, (count_m,))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coeff_sym</span> <span class="o">=</span> <span class="n">ReactionCoefficient</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">[i]&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span> <span class="o">=</span> <span class="n">left_side</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_side</span> <span class="o">=</span> <span class="n">right_side</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">considered</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">left_side</span> <span class="o">+</span> <span class="n">right_side</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">reaction_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span> <span class="c1"># Register myself</span>
+
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">ensure_species</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">considered</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">down_species</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">up_species</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_side</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">species</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">down_species</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">up_species</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">net_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sname</span><span class="p">):</span>
+        <span class="n">up</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_side</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sname</span><span class="p">)</span>
+        <span class="n">down</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span> <span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sname</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">up</span> <span class="o">==</span> <span class="n">down</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">up</span> <span class="o">-</span> <span class="n">down</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">up</span> <span class="o">-</span> <span class="n">down</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nbody_reaction</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># this is handy function for calculating</span>
+        <span class="c1"># number of species involved in the reaction</span>
+        <span class="c1"># this is used primarily in counting the</span>
+        <span class="c1"># number of scale factors a^3 needed to</span>
+        <span class="c1"># `calibrate`the reaction rates</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantities</span><span class="p">,</span> <span class="n">up_derivatives</span><span class="p">,</span> <span class="n">down_derivatives</span><span class="p">):</span>
+        <span class="c1"># We just calculate our net derivatives and stick them in the right</span>
+        <span class="c1"># place</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rate</span><span class="p">(</span><span class="n">quantities</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">*=</span> <span class="n">s</span><span class="o">.</span><span class="n">number_density</span><span class="p">(</span><span class="n">quantities</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">:</span>
+            <span class="n">down_derivatives</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">weight</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_side</span><span class="p">:</span>
+            <span class="n">up_derivatives</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">n</span> <span class="o">*</span> <span class="n">s</span><span class="o">.</span><span class="n">weight</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">_cmpkey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> : &quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> \
+          <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">*</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">]</span> <span class="p">)</span> \
+          <span class="o">+</span> <span class="s2">&quot; =&gt; &quot;</span> \
+          <span class="o">+</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">*</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_side</span><span class="p">]</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">a</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_reaction</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">left_side</span><span class="p">,</span> <span class="n">right_side</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize `Reaction`,</span>
+<span class="sd">        the chemical reactions between species</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        name: str</span>
+<span class="sd">            name of the reaction</span>
+<span class="sd">        left_side:</span>
+<span class="sd">            left hand side of the chemical reaction</span>
+<span class="sd">        right_side:</span>
+<span class="sd">            right hand side of the chemical reaction</span>
+<span class="sd">        f:</span>
+<span class="sd">            a function that takes state,</span>
+<span class="sd">            and returns the reaction coefficient</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">_w</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">rxn</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">left_side</span><span class="p">,</span> <span class="n">right_side</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_w</span>
+
+    <span class="k">def</span> <span class="nf">species_equation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">species</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="n">species</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">IndexedBase</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">)):</span>
+            <span class="n">species</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">species</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">species</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">nr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">net_change</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nr</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lhs_equation</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">lhs_equation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#eq = self.coeff_sym[index_i]</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coeff_sym</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_side</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                <span class="c1">#eq *= s.symbol[index_i]</span>
+                <span class="n">eq</span> <span class="o">*=</span> <span class="n">s</span><span class="o">.</span><span class="n">symbol</span>
+
+        <span class="c1"># a little hacky here to unfold</span>
+        <span class="c1"># the algebraic power</span>
+        <span class="c1"># i.e. H_1**3 -&gt; H_1*H_1*H_1</span>
+        <span class="c1">#eq = eq.replace(</span>
+        <span class="c1">#        lambda x: x.is_Pow and x.exp &gt; 0,</span>
+        <span class="c1">#        lambda x: sympy.Symbol(&#39;*&#39;.join([x.base.name]*x.exp)) )</span>
+
+        <span class="k">return</span> <span class="n">eq</span>
+
+<span class="n">reaction</span> <span class="o">=</span> <span class="n">Reaction</span><span class="o">.</span><span class="n">create_reaction</span>
+<span class="k">def</span> <span class="nf">chianti_rate</span><span class="p">(</span><span class="n">atom_name</span><span class="p">,</span> <span class="n">sm1</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">sp1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ch</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ImportError</span>
+    <span class="n">ion_name</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ion_name</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name must be in ChiantiPy format.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>
+    <span class="n">new_rates</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">def</span> <span class="nf">ion_rate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="n">ion</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">ion</span><span class="p">(</span><span class="n">ion_name</span><span class="p">,</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ion</span><span class="o">.</span><span class="n">ionizRate</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ion_name</span><span class="si">}</span><span class="s2"> is not defined in ChiantiPy master list&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;manually adding temperature to </span><span class="si">{</span><span class="n">ion_name</span><span class="si">}</span><span class="s2">_ion&quot;</span><span class="p">)</span>
+            <span class="n">ion</span><span class="o">.</span><span class="n">Temperature</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">ion</span><span class="o">.</span><span class="n">NTempDens</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">ion</span><span class="o">.</span><span class="n">ionizRate</span><span class="p">()</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">ion</span><span class="o">.</span><span class="n">IonizRate</span><span class="p">[</span><span class="s1">&#39;rate&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">vals</span>
+    <span class="k">if</span> <span class="n">sp1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_i&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">ion_rate</span><span class="p">,</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">de</span><span class="p">)],</span> <span class="c1"># left side</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sp1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">de</span><span class="p">)])</span> <span class="c1"># right side</span>
+        <span class="n">new_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_i&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">rec_rate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="n">ion</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="n">ion</span><span class="p">(</span><span class="n">ion_name</span><span class="p">,</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+        <span class="c1"># for some reason, the latest chiantipy</span>
+        <span class="c1"># failed to update the tempeature for fully ionized</span>
+        <span class="n">ion</span><span class="o">.</span><span class="n">Temperature</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">T</span>
+        <span class="n">ion</span><span class="o">.</span><span class="n">recombRate</span><span class="p">()</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">ion</span><span class="o">.</span><span class="n">RecombRate</span><span class="p">[</span><span class="s1">&#39;rate&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">vals</span>
+    <span class="k">if</span> <span class="n">sm1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_r&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">rec_rate</span><span class="p">,</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">de</span><span class="p">)],</span> <span class="c1"># left side</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sm1</span><span class="p">),</span> <span class="p">])</span> <span class="c1"># right side</span>
+        <span class="n">new_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_r&quot;</span> <span class="o">%</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_rates</span>
+
+<span class="k">def</span> <span class="nf">ion_photoionization_rate</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="n">photo_background</span><span class="o">=</span><span class="s1">&#39;HM12&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">chu</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ImportError</span>
+    <span class="n">ion_name</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="c1">#ion_name = chu.zion2name(np.int(species.number),</span>
+    <span class="c1">#                         np.int(species.free_electrons + 1))</span>
+    <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ion_name</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name must be in &#39;Ion Species&#39; format.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span>
+    <span class="n">element_name</span> <span class="o">=</span> <span class="n">ion_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ion_state</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ion_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">species_pi</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">element_name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span> <span class="n">ion_state</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>
+    <span class="n">new_rates</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">photoionization_rate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="c1"># Read in photoheating rates generated from Ben Oppenheimer&#39;s data</span>
+        <span class="c1"># (from: http://noneq.strw.leidenuniv.nl/)</span>
+        <span class="c1"># and do linear interpolation and then recompute</span>
+        <span class="c1"># the ends with either an extrapolation or falloff</span>
+        <span class="c1"># NOTE: these rates do the interpolation as a function fo redshift</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;photoionization&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_ion_by_ion_photoionization_</span><span class="si">%s</span><span class="s1">.h5&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">element_name</span><span class="p">,</span> <span class="n">photo_background</span><span class="p">))</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="c1">#f = h5py.File(&#39;../input/photoionization/%s_ion_by_ion_photoionization_%s.h5&#39;</span>
+        <span class="c1">#              %(element_name, photo_background))</span>
+        <span class="c1">#print(&#39;../input/photoionization/%s_ion_by_ion_photoionization_%s.h5&#39;</span>
+        <span class="c1">#              %(element_name, photo_background))</span>
+        <span class="c1">### Intepolate values within table values ###</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+        <span class="n">end_method</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 = extrapolation, 1 = gaussian falloff</span>
+
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1">### Extrapolation in logspace ###</span>
+            <span class="c1"># convert to log space</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">logz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+            <span class="n">logdataz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
+            <span class="n">logdataS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+            <span class="c1"># extrapolate</span>
+            <span class="n">extrapdown</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logz</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logz</span> <span class="o">&lt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapdown</span><span class="p">[</span><span class="n">logz</span> <span class="o">&lt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">extrapup</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logz</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logz</span> <span class="o">&gt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapup</span><span class="p">[</span><span class="n">logz</span> <span class="o">&gt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+            <span class="c1"># convert back to linear</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="n">vals</span>
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1">### Gaussian falloff when values extend beyond table values ###</span>
+            <span class="c1"># rename some variables to symplify code</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">z</span>
+            <span class="n">dataz</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span>
+            <span class="n">dataS</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)]</span>
+
+            <span class="c1"># compute gaussian tails</span>
+            <span class="n">gaussdown</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">z</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussdown</span><span class="p">[</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">gaussup</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">z</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussup</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">vals</span>
+
+    <span class="k">if</span> <span class="n">species_pi</span> <span class="ow">in</span> <span class="n">species_registry</span><span class="p">:</span>
+        <span class="n">species_pi</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="n">species_pi</span><span class="p">]</span>
+        <span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_pi&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">photoionization_rate</span><span class="p">,</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">species</span><span class="p">),</span> <span class="p">],</span> <span class="c1"># left side</span>
+                 <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">species_pi</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">de</span><span class="p">)])</span> <span class="c1"># right side</span>
+        <span class="n">new_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_pi&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_rates</span>
+
+<span class="k">class</span> <span class="nc">Species</span><span class="p">(</span><span class="n">ComparableMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pretty_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pretty_name</span> <span class="o">=</span> <span class="n">pretty_name</span> <span class="ow">or</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">symbol</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">species_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_cmpkey</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Species: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ChemicalSpecies"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.ChemicalSpecies">[docs]</a><span class="k">class</span> <span class="nc">ChemicalSpecies</span><span class="p">(</span><span class="n">Species</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;initialize chemical species object</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        name of the chemical species</span>
+<span class="sd">    weight: float</span>
+<span class="sd">        the weight of the species in terms of atomic mass unit</span>
+<span class="sd">    free_electrons: int</span>
+<span class="sd">        the number of free electrons of the species</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">free_electrons</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+                 <span class="n">pretty_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">free_electrons</span> <span class="o">=</span> <span class="n">free_electrons</span>
+        <span class="c1">#self.elements = {}</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ChemicalSpecies</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pretty_name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">number_density</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">quantities</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">quantities</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">quantities</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span>
+
+    <span class="k">def</span> <span class="nf">add_to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span>  <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edict</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edict</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">+=</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_edict</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+
+<div class="viewcode-block" id="ChemicalSpecies.find_constituent"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.ChemicalSpecies.find_constituent">[docs]</a>    <span class="k">def</span> <span class="nf">find_constituent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;find elements based on its name</span>
+<span class="sd">        return: total weight</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_edict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">original_name</span>
+        <span class="n">split</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;\d+|\D+[a-z]|\D&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">split</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+                <span class="n">_ele</span> <span class="o">=</span> <span class="n">s</span>
+            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_to_dict</span><span class="p">(</span><span class="n">_ele</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_to_dict</span><span class="p">(</span><span class="n">_ele</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elements</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edict</span></div>
+    <span class="k">def</span> <span class="nf">get_weight</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">elements</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">w</span> <span class="o">+=</span> <span class="n">periodic_table_by_name</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_weight</span> <span class="o">=</span> <span class="n">w</span></div>
+
+<div class="viewcode-block" id="AtomicSpecies"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.AtomicSpecies">[docs]</a><span class="k">class</span> <span class="nc">AtomicSpecies</span><span class="p">(</span><span class="n">ChemicalSpecies</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize the atomic species</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    atom_name: str</span>
+<span class="sd">        name of the atom</span>
+<span class="sd">    free_electrons: int</span>
+<span class="sd">        number of free electron</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    since it is an atom, the weight is taken directly from the periodic table.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atom_name</span><span class="p">,</span> <span class="n">free_electrons</span><span class="p">):</span>
+        <span class="n">num</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pn</span> <span class="o">=</span> <span class="n">periodic_table_by_name</span><span class="p">[</span><span class="n">atom_name</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">free_electrons</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_m</span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">atom_name</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">free_electrons</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_</span><span class="si">%01i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">atom_name</span><span class="p">,</span> <span class="n">free_electrons</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">pretty_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> with </span><span class="si">%s</span><span class="s2"> free electrons&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">pn</span><span class="p">,</span> <span class="n">free_electrons</span><span class="p">)</span>
+        <span class="c1"># update the self.elements based on the input name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">original_name</span> <span class="o">=</span> <span class="n">atom_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">find_constituent</span> <span class="p">()</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">AtomicSpecies</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span>
+            <span class="n">free_electrons</span><span class="p">,</span> <span class="n">pretty_name</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="MolecularSpecies"><a class="viewcode-back" href="../../api.html#dengo.reaction_classes.MolecularSpecies">[docs]</a><span class="k">class</span> <span class="nc">MolecularSpecies</span><span class="p">(</span><span class="n">ChemicalSpecies</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize molecular species</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    molecule_name: str</span>
+<span class="sd">        the name of the molecules</span>
+<span class="sd">    weight: float</span>
+<span class="sd">        weight of the molecule in amu</span>
+<span class="sd">    free_electrons: int</span>
+<span class="sd">        free electron in molecules</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">molecule_name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">free_electrons</span><span class="p">,</span>
+                 <span class="n">original_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_</span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">molecule_name</span><span class="p">,</span> <span class="n">free_electrons</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">pretty_name</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> with </span><span class="si">%s</span><span class="s2"> free electrons&quot;</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="n">name</span><span class="p">,</span> <span class="n">free_electrons</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">original_name</span> <span class="o">=</span> <span class="n">original_name</span> <span class="ow">or</span> <span class="n">molecule_name</span>
+        <span class="c1"># update the self.elements based on the input name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">find_constituent</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MolecularSpecies</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span>
+            <span class="n">free_electrons</span><span class="p">,</span> <span class="n">pretty_name</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">CoolingAction</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">_eq</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">equation</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_equation</span> <span class="o">=</span> <span class="n">equation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tables</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temporaries</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table_symbols</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp_symbols</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">cooling_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span> <span class="c1"># Register myself</span>
+
+    <span class="c1"># so that we can sort the coolingaction</span>
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">&gt;</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">equation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span>
+        <span class="n">symbols</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">species_registry</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+        <span class="c1">#ta_sym = dict((n, sympy.IndexedBase(n, (count_m,))) for n in self.tables))</span>
+
+        <span class="c1"># instead of using sympy symbols, we declare</span>
+
+        <span class="n">ta_sym</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">ReactionCoefficient</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_</span><span class="si">%s</span><span class="s2">[i]&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">)))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">table_symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ta_sym</span><span class="p">)</span>
+        <span class="c1">#tp_sym = dict((n, sympy.IndexedBase(n, (count_m,))) for n in self.temporaries))</span>
+
+        <span class="c1"># temporaries are in fact function of of the tables...</span>
+        <span class="n">tp_sym</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">n</span><span class="p">)))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">temporaries</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temp_symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">tp_sym</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">species_registry</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">Ilevel</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+                <span class="n">sp_name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="nb">eval</span><span class="p">(</span><span class="n">Ilevel</span><span class="p">)</span><span class="o">*</span><span class="s1">&#39;I&#39;</span>
+                <span class="n">temp_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">sp_name</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">symbol</span><span class="p">}</span>
+                <span class="n">symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">temp_dict</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="n">symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table_symbols</span><span class="p">)</span>
+        <span class="n">symbols</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temp_symbols</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_equation</span><span class="p">,</span> <span class="n">symbols</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">temporaries</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">symbols</span><span class="p">)</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">sympify</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">n2</span><span class="p">,</span> <span class="n">e2</span> <span class="ow">in</span> <span class="n">ta_sym</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">e</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n2</span><span class="p">,</span> <span class="n">e2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eq</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">species</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># self.equation</span>
+        <span class="n">bad</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temp_symbols</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table_symbols</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="p">)</span>
+        <span class="n">species</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([])</span>
+        <span class="c1">#for s in self.equation.atoms(sympy.IndexedBase):</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">equation</span><span class="o">.</span><span class="n">atoms</span><span class="p">(</span><span class="n">sympy</span><span class="o">.</span><span class="n">Symbol</span><span class="p">):</span>
+            <span class="n">bad</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">temp_symbols</span><span class="o">.</span><span class="n">values</span><span class="p">())</span><span class="o">.</span><span class="n">update</span><span class="p">(</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">table_symbols</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="p">)</span>
+            <span class="k">if</span> <span class="n">bad</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">s</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">bad</span><span class="p">:</span>
+                    <span class="n">species</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">species_registry</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[i]&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="n">species</span>
+
+    <span class="k">def</span> <span class="nf">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+
+    <span class="k">def</span> <span class="nf">temporary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">eq</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">temporaries</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">eq</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_cooling_action</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">equation</span><span class="p">):</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">equation</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">_W</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">f</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_W</span>
+
+<span class="n">cooling_action</span> <span class="o">=</span> <span class="n">CoolingAction</span><span class="o">.</span><span class="n">create_cooling_action</span>
+
+<span class="k">def</span> <span class="nf">ion_cooling_rate</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="n">atom_name</span><span class="p">):</span>
+
+    <span class="n">species_c</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">ion_name</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>
+    <span class="n">new_rates</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">cooling_rate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="c1"># Read in cooling rates from Gnat &amp; Ferland 2012</span>
+        <span class="c1"># and do linear interpolation and then recompute</span>
+        <span class="c1"># the ends with either an extrapolation or falloff</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;cooling&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_ion_by_ion_cooling.h5&#39;</span> <span class="o">%</span> <span class="n">atom_name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+        <span class="c1">### Intepolate values within table values ###</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+        <span class="n">end_method</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># 0 = extrapolation, 1 = gaussian falloff</span>
+
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1">### Extrapolation in logspace ###</span>
+            <span class="c1"># convert to log space</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">logT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+            <span class="n">logdataT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
+            <span class="n">logdataS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+            <span class="c1"># extrapolate</span>
+            <span class="n">extrapdown</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logT</span> <span class="o">-</span> <span class="n">logdataT</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataT</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataT</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logT</span> <span class="o">&lt;</span> <span class="n">logdataT</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapdown</span><span class="p">[</span><span class="n">logT</span> <span class="o">&lt;</span> <span class="n">logdataT</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">extrapup</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logT</span> <span class="o">-</span> <span class="n">logdataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataT</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logT</span> <span class="o">&gt;</span> <span class="n">logdataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapup</span><span class="p">[</span><span class="n">logT</span> <span class="o">&gt;</span> <span class="n">logdataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+            <span class="c1"># convert back to linear</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="n">vals</span>
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1">### Gaussian falloff when values extend beyond table values ###</span>
+            <span class="c1"># rename some variables to symplify code</span>
+            <span class="n">T</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">T</span>
+            <span class="n">dataT</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span>
+            <span class="n">dataS</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)]</span>
+
+            <span class="c1"># compute gaussian tails</span>
+            <span class="n">gaussdown</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">T</span> <span class="o">-</span> <span class="n">dataT</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataT</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">T</span> <span class="o">&lt;</span> <span class="n">dataT</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussdown</span><span class="p">[</span><span class="n">T</span> <span class="o">&lt;</span> <span class="n">dataT</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">gaussup</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">T</span> <span class="o">-</span> <span class="n">dataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">T</span> <span class="o">&gt;</span> <span class="n">dataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussup</span><span class="p">[</span><span class="n">T</span> <span class="o">&gt;</span> <span class="n">dataT</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+        <span class="n">data</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">vals</span>
+
+    <span class="n">ion_cooling_action</span> <span class="o">=</span> <span class="n">CoolingAction</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_c&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="c1">#name</span>
+             <span class="s2">&quot;-</span><span class="si">%s</span><span class="s2">_c * </span><span class="si">%s</span><span class="s2"> * de&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">))</span> <span class="c1">#equation</span>
+    <span class="n">ion_cooling_action</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_c&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cooling_rate</span>
+    <span class="n">new_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_c&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_rates</span>
+
+<span class="k">def</span> <span class="nf">ion_photoheating_rate</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="n">photo_background</span><span class="o">=</span><span class="s1">&#39;HM12&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">chu</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="k">raise</span> <span class="ne">ImportError</span>
+    <span class="c1">#ion_name = chu.zion2name(np.int(species.number),</span>
+    <span class="c1">#                         np.int(species.free_electrons + 1))</span>
+    <span class="n">ion_name</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ion_name</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Name must be in &#39;Ion Species&#39; format.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span>
+    <span class="n">element_name</span> <span class="o">=</span> <span class="n">ion_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ion_state</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ion_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">species_ph</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span>
+    <span class="n">de</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="s1">&#39;de&#39;</span><span class="p">]</span>
+    <span class="n">new_rates</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">photoheating_rate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="c1"># Read in photoheating rates generated from Ben Oppenheimer&#39;s data</span>
+        <span class="c1"># (from: http://noneq.strw.leidenuniv.nl/)</span>
+        <span class="c1"># and do linear interpolation and then recompute</span>
+        <span class="c1"># the ends with either an extrapolation or falloff</span>
+        <span class="c1"># NOTE: these rates do the interpolation as a function fo redshift</span>
+        <span class="n">fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="s1">&#39;photoheating&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">_ion_by_ion_photoheating_</span><span class="si">%s</span><span class="s1">.h5&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">element_name</span><span class="p">,</span> <span class="n">photo_background</span><span class="p">))</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="c1">#f = h5py.File(&#39;../input/photoheating/%s_ion_by_ion_photoheating_%s.h5&#39; %(element_name,</span>
+        <span class="c1">#                                                         photo_background))</span>
+
+        <span class="c1">### Intepolate values within table values ###</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+        <span class="n">end_method</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 0 = extrapolation, 1 = gaussian falloff</span>
+
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1">### Extrapolation in logspace ###</span>
+            <span class="c1"># convert to log space</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span>
+            <span class="n">logz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+            <span class="n">logdataz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
+            <span class="n">logdataS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)])</span>
+
+            <span class="c1"># extrapolate</span>
+            <span class="n">extrapdown</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logz</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logz</span> <span class="o">&lt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapdown</span><span class="p">[</span><span class="n">logz</span> <span class="o">&lt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">extrapup</span> <span class="o">=</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> \
+                <span class="p">(</span><span class="n">logz</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataS</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> \
+                <span class="o">/</span> <span class="p">(</span><span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">logz</span> <span class="o">&gt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">extrapup</span><span class="p">[</span><span class="n">logz</span> <span class="o">&gt;</span> <span class="n">logdataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+            <span class="c1"># convert back to linear</span>
+            <span class="n">vals</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">**</span><span class="n">vals</span>
+        <span class="k">if</span> <span class="n">end_method</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1">### Gaussian falloff when values extend beyond table values ###</span>
+            <span class="c1"># rename some variables to symplify code</span>
+            <span class="n">z</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">z</span>
+            <span class="n">dataz</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span>
+            <span class="n">dataS</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">ion_name</span><span class="p">)]</span>
+
+            <span class="c1"># compute gaussian tails</span>
+            <span class="n">gaussdown</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">z</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussdown</span><span class="p">[</span><span class="n">z</span> <span class="o">&lt;</span> <span class="n">dataz</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="n">gaussup</span> <span class="o">=</span> <span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">tiny</span><span class="o">/</span><span class="n">dataS</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="p">(((</span><span class="n">z</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">vals</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">gaussup</span><span class="p">[</span><span class="n">z</span> <span class="o">&gt;</span> <span class="n">dataz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">vals</span>
+
+    <span class="k">if</span> <span class="n">species_ph</span> <span class="ow">in</span> <span class="n">species_registry</span><span class="p">:</span>
+        <span class="n">species_ph</span> <span class="o">=</span> <span class="n">species_registry</span><span class="p">[</span><span class="n">species_ph</span><span class="p">]</span>
+        <span class="n">ion_cooling_action</span> <span class="o">=</span> <span class="n">CoolingAction</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_ph&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="c1">#name</span>
+                                           <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_ph * </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">))</span> <span class="c1">#equation</span>
+        <span class="n">ion_cooling_action</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_ph&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">photoheating_rate</span>
+        <span class="n">new_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">_ph&quot;</span> <span class="o">%</span> <span class="n">species</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_rates</span>
+
+</pre></div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dengo Documentation &#8212; Dengo Cookbook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Interfacing with Hydro Simulations" href="workWithHydroSims.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dengo Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing.html">
+   Welcom to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Build Your Own Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorial/buildingblocks/SimpleNetwork.html">
+   A Chemistry Solver from Scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateSpecies.html">
+     Creating a New Chemical Species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateReaction.html">
+     Creating Reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateCoolingFunction.html">
+     Create Cooling Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateANetwork.html">
+     Creating a Network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/BuildingSolverWithDengo.html">
+     Building A ODE solver
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Make use of Templates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/buildingblocks/solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorial/buildingblocks/dengo_writesolver.html">
+   Making Use of Dengo templates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/dengo_cython.html">
+     Build Cython Module from Templates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/dengo_buildClib.html">
+     Build C-library
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/api.rst"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Dengo Documentation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dengo Documentation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Dengo Documentation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="module-dengo.chemical_network">
+<span id="dengo-documentation"></span><h1>Dengo Documentation<a class="headerlink" href="#module-dengo.chemical_network" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dengo.chemical_network.</span></span><span class="sig-name descname"><span class="pre">ChemicalNetwork</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">write_intermediate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">31557000000000.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork" title="Permalink to this definition">¶</a></dt>
+<dd><p>A chemical network that gathers all the species and reactions.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.reactions">
+<span class="sig-name descname"><span class="pre">reactions</span></span><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.reactions" title="Permalink to this definition">¶</a></dt>
+<dd><p>the dictionary that holds the reactions added through <cite>self.add_reaction</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.cooling_actions">
+<span class="sig-name descname"><span class="pre">cooling_actions</span></span><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.cooling_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>the dictionary that tracks the cooling tracked by the <cite>ChemicalNetwork</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.required_species">
+<span class="sig-name descname"><span class="pre">required_species</span></span><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.required_species" title="Permalink to this definition">¶</a></dt>
+<dd><p>the set of chemical species tracked by <cite>ChemicalNetwork</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.add_cooling">
+<span class="sig-name descname"><span class="pre">add_cooling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cooling_term</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.add_cooling"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.add_cooling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add cooling to the <cite>ChemicalNetwork</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>term</strong> (<em>cooling</em>) – the string that corresponds to the cooling that are previously registered in <cite>cooling_registry</cite></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.add_reaction">
+<span class="sig-name descname"><span class="pre">add_reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reaction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_add</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.add_reaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.add_reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add reaction to the <cite>ChemicalNetwork</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>reaction</strong> – the string of the reactions that are previously registered in <cite>reaction_registry</cite></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.chemical_species">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chemical_species</span></span><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.chemical_species" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function for code generation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.init_redshift">
+<span class="sig-name descname"><span class="pre">init_redshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0.0,</span> <span class="pre">10.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_z_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.init_redshift"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.init_redshift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the range of redshift over which the rate tables are generated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z_bounds</strong> (<em>List</em><em>[</em><em>Float</em><em>, </em><em>Float</em><em>]</em><em>, </em><em>optional</em><em> (</em><em>default=</em><em>(</em><em>0.0</em><em>,</em><em>10.0</em><em>)</em><em>)</em>) – the range over which the rates table is interpolated</p></li>
+<li><p><strong>n_bins</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1024</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.init_temperature">
+<span class="sig-name descname"><span class="pre">init_temperature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T_bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">100000000.0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.init_temperature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.init_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the range of temperature over which the rate tables are generated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T_bounds</strong> (<em>List</em><em>[</em><em>Float</em><em>, </em><em>Float</em><em>]</em><em>, </em><em>optional</em><em> (</em><em>default=</em><em>(</em><em>1</em><em>,</em><em>1e8</em><em>)</em><em>)</em>) – the range over which the rates table is interpolated</p></li>
+<li><p><strong>n_bins</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default=1024</em><em>)</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.print_JacTimesVec_component">
+<span class="sig-name descname"><span class="pre">print_JacTimesVec_component</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assign_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.print_JacTimesVec_component"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.print_JacTimesVec_component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the product of Jacobian * Vec for a given Vec
+Might be useful when we use the CVSpils solver</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.print_conserved_species">
+<span class="sig-name descname"><span class="pre">print_conserved_species</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assign_to</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_mass_density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.print_conserved_species"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.print_conserved_species" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the total {H, He, …} atoms locked in species considered</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.solve_equilibrium_abundance">
+<span class="sig-name descname"><span class="pre">solve_equilibrium_abundance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.solve_equilibrium_abundance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.solve_equilibrium_abundance" title="Permalink to this definition">¶</a></dt>
+<dd><p>write the equilibrium abundance of species sp</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.species_total">
+<span class="sig-name descname"><span class="pre">species_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">species</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.species_total"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.species_total" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the RHS function of the given species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>species</strong> (<em>str</em><em>,</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>eq</strong> – the dydt (RHS function) in sympy expressions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Sympy.symbols</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.update_ode_species">
+<span class="sig-name descname"><span class="pre">update_ode_species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.update_ode_species"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.update_ode_species" title="Permalink to this definition">¶</a></dt>
+<dd><p>this refers to the set of species that our ODE solver solves</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.chemical_network.ChemicalNetwork.write_solver">
+<span class="sig-name descname"><span class="pre">write_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rates_and_rate_tables'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ode_solver_source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'BE_chem_solve.C'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">main_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'main'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/chemical_network.html#ChemicalNetwork.write_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.chemical_network.ChemicalNetwork.write_solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the chemistry solver, based on the specified solver templates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver_name</strong> (<em>str</em>) – the name of the solver</p></li>
+<li><p><strong>solver_template</strong> (<em>str</em><em>, </em><em>default = rate_and_rate_tables</em>) – the jinja2 template the <cite>ChemicalNetwork</cite> populates, read dengo/templates for examples</p></li>
+<li><p><strong>ode_solver_source</strong> (<em>str</em><em>, </em><em>default = BE_chem_solve.C</em>) – the ODE solver used</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em><em>, </em><em>deafault = .</em>) – the directory at which these files would be generated</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-dengo.reaction_classes"></span><dl class="py class">
+<dt class="sig sig-object py" id="dengo.reaction_classes.AtomicSpecies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">AtomicSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_electrons</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#AtomicSpecies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.AtomicSpecies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the atomic species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>atom_name</strong> (<em>str</em>) – name of the atom</p></li>
+<li><p><strong>free_electrons</strong> (<em>int</em>) – number of free electron</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>since it is an atom, the weight is taken directly from the periodic table.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dengo.reaction_classes.ChemicalSpecies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">ChemicalSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_electrons</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretty_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#ChemicalSpecies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.ChemicalSpecies" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize chemical species object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the chemical species</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – the weight of the species in terms of atomic mass unit</p></li>
+<li><p><strong>free_electrons</strong> (<em>int</em>) – the number of free electrons of the species</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="dengo.reaction_classes.ChemicalSpecies.find_constituent">
+<span class="sig-name descname"><span class="pre">find_constituent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#ChemicalSpecies.find_constituent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.ChemicalSpecies.find_constituent" title="Permalink to this definition">¶</a></dt>
+<dd><p>find elements based on its name
+return: total weight</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dengo.reaction_classes.MolecularSpecies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">MolecularSpecies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">free_electrons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#MolecularSpecies"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.MolecularSpecies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize molecular species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>molecule_name</strong> (<em>str</em>) – the name of the molecules</p></li>
+<li><p><strong>weight</strong> (<em>float</em>) – weight of the molecule in amu</p></li>
+<li><p><strong>free_electrons</strong> (<em>int</em>) – free electron in molecules</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="dengo.reaction_classes.ReactionCoefficient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">ReactionCoefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">assumptions</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#ReactionCoefficient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.ReactionCoefficient" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py property">
+<dt class="sig sig-object py" id="dengo.reaction_classes.ReactionCoefficient.free_symbols">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">free_symbols</span></span><a class="headerlink" href="#dengo.reaction_classes.ReactionCoefficient.free_symbols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return from the atoms of self those which are free symbols.</p>
+<p>For most expressions, all symbols are free symbols. For some classes
+this is not true. e.g. Integrals use Symbols for the dummy variables
+which are bound variables, so Integral has a method to return all
+symbols except those. Derivative keeps track of symbols with respect
+to which it will perform a derivative; those are
+bound variables, too, so it has its own free_symbols method.</p>
+<p>Any other method that uses bound variables should implement a
+free_symbols method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dengo.reaction_classes.reaction">
+<span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">reaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left_side</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_side</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dengo.reaction_classes.reaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize <cite>Reaction</cite>,
+the chemical reactions between species</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the reaction</p></li>
+<li><p><strong>left_side</strong> – left hand side of the chemical reaction</p></li>
+<li><p><strong>right_side</strong> – right hand side of the chemical reaction</p></li>
+<li><p><strong>f</strong> – a function that takes state,
+and returns the reaction coefficient</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dengo.reaction_classes.registry_setup">
+<span class="sig-prename descclassname"><span class="pre">dengo.reaction_classes.</span></span><span class="sig-name descname"><span class="pre">registry_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dengo/reaction_classes.html#registry_setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#dengo.reaction_classes.registry_setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>a decorator function register unseen species,
+cooling and reactions into the registry</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="workWithHydroSims.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Interfacing with Hydro Simulations</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sunny Tang<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
