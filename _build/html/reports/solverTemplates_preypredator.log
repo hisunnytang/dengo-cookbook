@@ -1,0 +1,165 @@
+Traceback (most recent call last):
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/kwoksun2/anaconda3/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/kwoksun2/anaconda3/lib/python3.8/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import h5py
+
+mh      = 1.67e-24
+kb      = 1.38e-16
+gamma   = 5./3.
+gammaH2_1 = 7./5.
+gammaH2_2 = 7./5.
+_gamma_m1 = 1./ (gamma-1.)
+
+# read rates in as global variables
+rates_table = 'reaction_rates.h5'
+ratef = h5py.File(rates_table, 'r')
+
+# Reaction Rates
+{% for k in network.reactions.keys()%}
+out{{k}}dev = ratef['{{k}}'][:]
+{%- endfor %} 
+
+# Cooling Rates
+{%- for name, rate in network.cooling_actions | dictsort %}
+{%- for name2 in rate.tables | sort %}
+out_{{name}}_{{name2}} = ratef["{{name}}_{{name2}}"][:]
+{%- endfor %}
+{%- endfor %}
+tdev = ratef['T'][:]
+ratef.close()
+
+def interpolate_rates(T):
+    """Interpolate all the reaction rates based on temperature
+    """
+    {% for k in network.reactions.keys()%}
+    {{k}} = np.interp(T, tdev, out{{k}}dev)
+    {%- endfor %} 
+    return (
+    {%- for k in network.reactions.keys() -%}
+    {{k}}, 
+    {%- endfor -%}
+    )
+def interpolate_cooling_rates(T):
+    """Interpolate all the cooling rates based on temperature
+    """
+    {%- for name, rate in network.cooling_actions | dictsort %}
+    {%- for name2 in rate.tables | sort %}
+    {{name}}_{{name2}} = np.interp(T, tdev, out_{{name}}_{{name2}})
+    {%- endfor %}
+    {%- endfor %}
+    return (
+    {%- for name, rate in network.cooling_actions | dictsort -%}
+    {%- for name2 in rate.tables | sort -%}
+    {{name}}_{{name2}}, 
+    {%- endfor -%}
+    {%- endfor -%}
+    )
+
+def calculate_temperature(state):
+    """calculate temperature based on the N different input state
+
+    Parameters
+    ----------
+    state : ndarray with shape [NSPECIES + 1, N]
+    Abundances sorted by name, and the last dimension corresponds to the current check_time
+
+    Returns
+    -------
+    Temperature: ndarray
+
+    """
+# retreive the species 
+    {% for s in network.required_species | sort -%}
+    {{s.name}}, 
+    {%- endfor -%}
+    _= state
+
+
+    density = {{network.print_mass_density()}}
+
+    return {{network.temperature_calculation()}}
+
+
+
+def f(state):
+    """RHS function of each chemical species
+
+    Parameters
+    ----------
+    state : ndarray with shape [NSPECIES + 1, N]
+    Abundances sorted by name, and the last dimension corresponds to the current check_time
+
+    Returns
+    -------
+    dy/dt: rate of change of each species
+    """
+
+# retreive the species 
+    {% for s in network.required_species | sort -%}
+    {{s.name}}, 
+    {%- endfor -%}
+    current_time= state
+
+# calculate temperature
+    T = calculate_temperature(state)
+    
+# calculate mass density
+    mdensity = {{network.print_mass_density()}}*mh;
+    inv_mdensity = 1/mdensity;
+        
+# calculate the h2 optical depth approximation        
+    h2_optical_depth_approx  = min( 1.0, pow( (mdensity / (1.34e-14) )  , -0.45) );
+    
+    tau      = pow( (mdensity / 3.3e-8 ), 2.8);
+    tau      = max( tau, 1.0e-5 );
+    cie_optical_depth_approx = min( 1.0, (1.0 - exp(-tau) ) / tau );
+
+# interpolate the rates
+    {% for k in network.reactions.keys() -%}
+    {{k}}, 
+    {%- endfor %} = interpolate_rates(T)
+
+    
+    {% for name, rate in network.cooling_actions | dictsort -%}
+    {%- for name2 in rate.tables | sort -%}
+    {{name}}_{{name2}}, 
+    {%- endfor -%}
+    {%- endfor -%} = interpolate_cooling_rates(T)
+
+# rhs function
+    {% for s in network.required_species | sort %}
+    d{{s.name}} = {{rhs_dict[s]}}*np.ones_like(ge)
+    {%- endfor %} 
+
+    return np.array([
+    {%- for s in network.required_species | sort -%}
+    d{{s.name}}, 
+    {%- endfor -%}
+    0.0*current_time
+    ])
+------------------
+
+[0;36m  Input [0;32mIn [8][0;36m[0m
+[0;31m    {% for k in network.reactions.keys()%}[0m
+[0m     ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (1742524791.py, line 16)
+

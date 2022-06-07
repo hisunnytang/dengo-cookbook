@@ -1,0 +1,1446 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How Does Dengo Generate Solvers? &#8212; Dengo Cookbook</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Dengo Cookbook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing.html">
+   Welcom to Dengo Cookbook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Installation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="install/Install.html">
+   Installation Guide
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Build Your Own Network
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorial/buildingblocks/SimpleNetwork.html">
+   A Chemistry Solver from Scratch
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateSpecies.html">
+     Creating a New Chemical Species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateReaction.html">
+     Creating Reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateCoolingFunction.html">
+     Create Cooling Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/CreateANetwork.html">
+     Creating a Network
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/BuildingSolverWithDengo.html">
+     Building A ODE solver
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Make use of Templates
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial/buildingblocks/solverTemplate.html">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="tutorial/buildingblocks/dengo_writesolver.html">
+   Making Use of Dengo templates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/dengo_cython.html">
+     Build Cython Module from Templates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="tutorial/buildingblocks/dengo_buildClib.html">
+     Build C-library
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="threebody-check.html">
+   Threebody Reaction Example
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="workWithHydroSims.html">
+   Interfacing with Hydro Simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="api.html">
+   Dengo Documentation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/solverTemplates_preypredator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/solverTemplates_preypredator.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prey-predator-model">
+   Prey-Predator Model
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-libraries">
+   Importing Libraries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters-setup">
+     Parameters Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-chemicalnetwork">
+     Initialize
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ChemicalNetwork
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#register-the-species">
+       Register the species
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#register-the-reactions">
+       Register the reactions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-the-reactions-to-the-chemicalnetwork">
+       Adding the reactions to the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ChemicalNetwork
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-solver">
+     Building the solver
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluate-the-reaction-rates">
+       Evaluate the reaction rates
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluate-the-temperature">
+       Evaluate the temperature
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-rhs-function">
+       The RHS function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordinary-differential-equation">
+       Ordinary Differential Equation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#backward-euler-method">
+         Backward Euler Method
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-jacobian-function">
+       The Jacobian Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jinja2-template-writer">
+       Jinja2 Template Writer
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>How Does Dengo Generate Solvers?</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   How Does Dengo Generate Solvers?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prey-predator-model">
+   Prey-Predator Model
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-libraries">
+   Importing Libraries
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameters-setup">
+     Parameters Setup
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-chemicalnetwork">
+     Initialize
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ChemicalNetwork
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#register-the-species">
+       Register the species
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#register-the-reactions">
+       Register the reactions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-the-reactions-to-the-chemicalnetwork">
+       Adding the reactions to the
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         ChemicalNetwork
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#building-the-solver">
+     Building the solver
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluate-the-reaction-rates">
+       Evaluate the reaction rates
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluate-the-temperature">
+       Evaluate the temperature
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-rhs-function">
+       The RHS function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordinary-differential-equation">
+       Ordinary Differential Equation
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#backward-euler-method">
+         Backward Euler Method
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-jacobian-function">
+       The Jacobian Function
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jinja2-template-writer">
+       Jinja2 Template Writer
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="how-does-dengo-generate-solvers">
+<h1>How Does Dengo Generate Solvers?<a class="headerlink" href="#how-does-dengo-generate-solvers" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial tells you how the solver are generated with the help of <code class="docutils literal notranslate"><span class="pre">dengo.ChemicalNetwork</span></code>, and <code class="docutils literal notranslate"><span class="pre">Jinja2</span></code>. In short, <code class="docutils literal notranslate"><span class="pre">dengo.ChemicalNetwork</span></code> carries the full information of the chemical reactions and cooling actions of interest. It internally generates the symbolic representation of the dynamics of each chemical species. This can be exported as <code class="docutils literal notranslate"><span class="pre">C++</span></code> or <code class="docutils literal notranslate"><span class="pre">python</span></code> code with a pre-written templates which can be found under <code class="docutils literal notranslate"><span class="pre">dengo/templates</span></code>. In this example we will be demonstrating how to generate rhs and solve the initial value problem with<code class="docutils literal notranslate"><span class="pre">scipy.odeint</span></code></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="prey-predator-model">
+<h1>Prey-Predator Model<a class="headerlink" href="#prey-predator-model" title="Permalink to this headline">¶</a></h1>
+<p>We took the Prey-Predator model as our motivating example. It is also known as <a class="reference external" href="https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations">Lotka-Volterra Equations (Wikipedia)</a>.
+It describes the dynamics of the two species (predator and prey) with 2 first order differential equations.
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+\frac{dx}{dt} &amp;= \alpha x - \beta xy \\
+\frac{dy}{dt} &amp;= \delta xy - \gamma y, \\
+\end{align*}
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>x<span class="math notranslate nohighlight">\( is the number of prey, \)</span>y<span class="math notranslate nohighlight">\( is the number of predator, \)</span>t$ represents time.</p>
+<p>Taken from wikipedia:
+<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Lotka_Volterra_dynamics.svg/676px-Lotka_Volterra_dynamics.svg.png" /></p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="importing-libraries">
+<h1>Importing Libraries<a class="headerlink" href="#importing-libraries" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">dengo.reaction_classes</span> <span class="kn">import</span> \
+ <span class="n">reaction</span><span class="p">,</span> \
+ <span class="n">ChemicalSpecies</span><span class="p">,</span> \
+ <span class="n">registry_setup</span><span class="p">,</span> \
+ <span class="n">species_registry</span>
+<span class="kn">from</span> <span class="nn">dengo.chemical_network</span> <span class="kn">import</span> <span class="n">ChemicalNetwork</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pyximport</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="parameters-setup">
+<h2>Parameters Setup<a class="headerlink" href="#parameters-setup" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># parameters for the prey-predator model</span>
+<span class="n">α</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span>
+<span class="n">β</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span>
+<span class="n">γ</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">δ</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="c1"># initial conditions</span>
+<span class="n">predator0</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">prey0</span> <span class="o">=</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="initialize-chemicalnetwork">
+<h2>Initialize <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork</span></code><a class="headerlink" href="#initialize-chemicalnetwork" title="Permalink to this headline">¶</a></h2>
+<p>Our <strong>network</strong> consists of 4 species and 4 reactions.</p>
+<div class="section" id="register-the-species">
+<h3>Register the species<a class="headerlink" href="#register-the-species" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predator</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;predator&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">dead_predator</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;dead_predator&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">prey</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">dead_prey</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;dead_prey&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="register-the-reactions">
+<h3>Register the reactions<a class="headerlink" href="#register-the-reactions" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\rm prey &amp;\rightarrow \rm prey + prey\\
+\rm predator &amp;\rightarrow \rm dead \rm ~ predator \\
+\rm prey + \rm predator &amp;\rightarrow \rm dead ~ prey + \rm ~ predator + \rm ~   \frac{\gamma}{\beta} predator\\
+\end{align*}
+\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@reaction</span><span class="p">(</span><span class="s2">&quot;exp_growth_prey&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">prey</span><span class="p">),</span> <span class="p">],</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prey</span><span class="p">),</span> <span class="p">])</span>
+<span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">α</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="nd">@reaction</span><span class="p">(</span><span class="s2">&quot;predation&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">predator</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">prey</span><span class="p">)],</span> <span class="p">[</span>
+       <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dead_prey</span><span class="p">),</span> <span class="p">(</span><span class="n">γ</span><span class="o">/</span><span class="n">β</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">predator</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">β</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="nd">@reaction</span><span class="p">(</span>
+ <span class="s2">&quot;natural_death_predator&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">predator</span><span class="p">),</span> <span class="p">],</span>
+ <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dead_predator</span><span class="p">),</span> <span class="p">])</span>
+<span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">γ</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-the-reactions-to-the-chemicalnetwork">
+<h3>Adding the reactions to the <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork</span></code><a class="headerlink" href="#adding-the-reactions-to-the-chemicalnetwork" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cN</span> <span class="o">=</span> <span class="n">ChemicalNetwork</span><span class="p">()</span>
+<span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;exp_growth_prey&quot;</span><span class="p">)</span>
+<span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;predation&quot;</span><span class="p">)</span>
+<span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;natural_death_predator&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@registry_setup</span>
+<span class="k">def</span> <span class="nf">setup_predator_prey_rates</span><span class="p">():</span>
+    <span class="n">predator</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;predator&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">dead_predator</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;dead_predator&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">prey</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;prey&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">dead_prey</span> <span class="o">=</span> <span class="n">ChemicalSpecies</span><span class="p">(</span><span class="s2">&quot;dead_prey&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="c1"># predator-prey model</span>
+    <span class="nd">@reaction</span><span class="p">(</span><span class="s2">&quot;exp_growth_prey&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">prey</span><span class="p">),</span> <span class="p">],</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="n">prey</span><span class="p">),</span> <span class="p">])</span>
+    <span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">α</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="nd">@reaction</span><span class="p">(</span><span class="s2">&quot;predation&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">predator</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">prey</span><span class="p">)],</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dead_prey</span><span class="p">),</span> <span class="p">((</span><span class="n">δ</span><span class="o">/</span><span class="n">β</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">predator</span><span class="p">)])</span>
+    <span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">β</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    <span class="nd">@reaction</span><span class="p">(</span>
+     <span class="s2">&quot;natural_death_predator&quot;</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">predator</span><span class="p">),</span> <span class="p">],</span>
+     <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dead_predator</span><span class="p">),</span> <span class="p">])</span>
+    <span class="k">def</span> <span class="nf">rxn</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">γ</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">predator_prey_network</span><span class="p">():</span>
+    <span class="n">setup_predator_prey_rates</span><span class="p">()</span>
+    <span class="n">cN</span> <span class="o">=</span> <span class="n">ChemicalNetwork</span><span class="p">()</span>
+    <span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;exp_growth_prey&quot;</span><span class="p">)</span>
+    <span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;predation&quot;</span><span class="p">)</span>
+    <span class="n">cN</span><span class="o">.</span><span class="n">add_reaction</span><span class="p">(</span><span class="s2">&quot;natural_death_predator&quot;</span><span class="p">)</span>
+
+    <span class="c1"># this shouldnt be compulsory...</span>
+    <span class="n">cN</span><span class="o">.</span><span class="n">init_temperature</span><span class="p">((</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e8</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">cN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span> <span class="o">=</span> <span class="n">predator_prey_network</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adding reaction: exp_growth_prey : 1*prey =&gt; 2*prey
+Adding reaction: predation : 1*predator + 1*prey =&gt; 1*dead_prey + 2.5*predator
+Adding reaction: natural_death_predator : 1*predator =&gt; 1*dead_predator
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="building-the-solver">
+<h2>Building the solver<a class="headerlink" href="#building-the-solver" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we will walk you through how to write a template from scratch that can be fed into a scipy solver. This can be done with <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.write_solver</span></code> and the combination of templates available under <code class="docutils literal notranslate"><span class="pre">dengo/templates</span></code>.</p>
+<div class="section" id="evaluate-the-reaction-rates">
+<h3>Evaluate the reaction rates<a class="headerlink" href="#evaluate-the-reaction-rates" title="Permalink to this headline">¶</a></h3>
+<p>Reaction rates usually have a temperature dependence. For example, for reactions following the (Arrhenius equation)[<a class="reference external" href="https://en.wikipedia.org/wiki/Arrhenius_equation">https://en.wikipedia.org/wiki/Arrhenius_equation</a>] usually have the forms of $<span class="math notranslate nohighlight">\(k(T) = A e^{-\frac{E_a}{RT}}\)</span><span class="math notranslate nohighlight">\(, where \)</span>k<span class="math notranslate nohighlight">\( is the reaction rate, \)</span>E_a<span class="math notranslate nohighlight">\( is the activation energy of the reaction, \)</span>T<span class="math notranslate nohighlight">\( is the temperature, \)</span>A<span class="math notranslate nohighlight">\(, \)</span>R<span class="math notranslate nohighlight">\( are the pre-exponential factor, and the universal gas constant respectively. \)</span>A$ is sometimes dependent further on temperature in (Modified Arrhenius equation)<a class="reference external" href="https://en.wikipedia.org/wiki/Arrhenius_equation#Modified_Arrhenius_equation">https://en.wikipedia.org/wiki/Arrhenius_equation#Modified_Arrhenius_equation</a>].</p>
+<p>Evaluating these rates on the fly would be computationally expensive. One possible way of reducing the computational time is to interpolate from a pre-calculated reaction rates table. The rates are specified when the reactions <code class="docutils literal notranslate"><span class="pre">rxn</span></code> are first created with the <code class="docutils literal notranslate"><span class="pre">&#64;reaction</span></code> decorator. They can be evaluated handily with <code class="docutils literal notranslate"><span class="pre">rxn.coeff_fn(chemicalnetwork)</span></code>. The range of temperature of interest for example <span class="math notranslate nohighlight">\(T = \rm (1, 10^8) K\)</span> can be first specified with <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.init_temperature(T_bounds=(1e0,</span> <span class="pre">1e8),</span> <span class="pre">n_bins=1024)</span></code>. The added reaction objects can be accessed with <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.reactions</span></code>. For example, the reaction rates of <code class="docutils literal notranslate"><span class="pre">exp_growth_prey</span></code> can the accessed with the snippet below</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rxn_rate</span> <span class="o">=</span> <span class="n">cn</span><span class="o">.</span><span class="n">reactions</span><span class="p">[</span><span class="s1">&#39;exp_growth_prey&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coeff_fn</span><span class="p">(</span><span class="n">ChemicalNetwork</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output <code class="docutils literal notranslate"><span class="pre">rxn_rate</span></code> is an numpy array with a length of <code class="docutils literal notranslate"><span class="pre">[n_bins]</span></code>.</p>
+<p>A reaction rate table is generated and exported to a <code class="docutils literal notranslate"><span class="pre">hdf5</span></code> file below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solver_name</span> <span class="o">=</span> <span class="s1">&#39;prey_predator_solver&#39;</span>
+<span class="n">output_dir</span>  <span class="o">=</span> <span class="s2">&quot;.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ofn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">solver_name</span><span class="si">}</span><span class="s2">_tables.h5&quot;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">ofn</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">rxn</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">cn</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">rxn</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">rxn</span><span class="o">.</span><span class="n">coeff_fn</span><span class="p">(</span><span class="n">cn</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">rxn</span><span class="p">,</span> <span class="s2">&quot;tables&quot;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">tab</span> <span class="ow">in</span> <span class="n">rxn</span><span class="o">.</span><span class="n">tables</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">rxn</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">tab</span><span class="p">,</span> <span class="n">rxn</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">rxn</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">tab</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">rxn</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tab</span><span class="p">](</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float64&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluate-the-temperature">
+<h3>Evaluate the temperature<a class="headerlink" href="#evaluate-the-temperature" title="Permalink to this headline">¶</a></h3>
+<p>The temperature <span class="math notranslate nohighlight">\(T\)</span> as we have seen above is critical to the rate at which the reaction proceeds. The temperature can be evaluated from the internal energy term <code class="docutils literal notranslate"><span class="pre">ge</span></code>.
+Internal energy of an ideal gas is:
+$<span class="math notranslate nohighlight">\( E = c_V T = \frac{nkT}{\gamma -1}\)</span><span class="math notranslate nohighlight">\(
+For monoatomic gas \)</span>\gamma<span class="math notranslate nohighlight">\( is \)</span>5/3<span class="math notranslate nohighlight">\(, and diatomic gas \)</span>\gamma<span class="math notranslate nohighlight">\( is \)</span>7/5<span class="math notranslate nohighlight">\(. \)</span>\gamma<span class="math notranslate nohighlight">\( refers to the adiabatic constant, and it is directly related to the degree of freedom available to the species \)</span>f = \frac{2}{\gamma -1}$.</p>
+<p>The total internal energy in the mixture of ideal gas is:
+$<span class="math notranslate nohighlight">\(E = \sum_s \frac{n_s kT}{\gamma_s -1}\)</span><span class="math notranslate nohighlight">\(.
+\)</span>T<span class="math notranslate nohighlight">\( can be thus be calculated from \)</span>E<span class="math notranslate nohighlight">\( and the abundance of all the avaialble species \)</span>n_s$.</p>
+</div>
+<div class="section" id="the-rhs-function">
+<h3>The RHS function<a class="headerlink" href="#the-rhs-function" title="Permalink to this headline">¶</a></h3>
+<p>The dynamics is specified by the set of ODE equations.
+$<span class="math notranslate nohighlight">\( \frac{d \bf y}{dt} = f(\bf y) \)</span><span class="math notranslate nohighlight">\(
+where \)</span>\bf y<span class="math notranslate nohighlight">\( corresponds to the abundance vector for the species of interest, and \)</span>f(\bf y)$ describes the dynamics.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Dengo</span></code> aggreates the reactions specific to each species <span class="math notranslate nohighlight">\(s\)</span> with <code class="docutils literal notranslate"><span class="pre">ChemicalNetwork.species_total(s)</span></code> with <code class="docutils literal notranslate"><span class="pre">sympy</span></code> internally. These sympy expression can be exported to various different code style with <code class="docutils literal notranslate"><span class="pre">sympy.printing</span></code> to <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">python</span></code> for example.</p>
+</div>
+<div class="section" id="ordinary-differential-equation">
+<h3>Ordinary Differential Equation<a class="headerlink" href="#ordinary-differential-equation" title="Permalink to this headline">¶</a></h3>
+<p>Here we outline the steps needed for a first order backward-euler integration. This is under the umbrella of a wider class of integration methods called implicit methods.</p>
+<blockquote>
+<div><p>Implicit methods require an extra computation (solving the above equation), and they can be much harder to implement. Implicit methods are used because many problems arising in practice are stiff, for which the use of an explicit method requires impractically small time steps <span class="math notranslate nohighlight">\(\Delta t\)</span> to keep the error in the result bounded (see numerical stability). That said, whether one should use an explicit or implicit method depends upon the problem to be solved.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Explicit_and_implicit_methods">Explicit and implicit methods: Computation</a></p>
+</div></blockquote>
+<div class="section" id="backward-euler-method">
+<h4>Backward Euler Method<a class="headerlink" href="#backward-euler-method" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{align*}
+\frac{d \bf y}{dt} &amp;= f(\bf y) \\
+y(t_{i+1}) &amp;\approx y(t_i) + h f(y_{i+1}) \\
+F(x) &amp;= x - y(t_i) - h f(x)
+\end{align*}
+\end{split}\]</div>
+<p>where h is step-size of the integration. The solution of  <span class="math notranslate nohighlight">\(F(x) = 0\)</span> gives straightforwardly <span class="math notranslate nohighlight">\(y_{i+1}\)</span>. The solution to <span class="math notranslate nohighlight">\(F(x)\)</span> can be found iteratively by the newtons method
+$<span class="math notranslate nohighlight">\(
+x_{k+1} = x_k - \frac{F(x_k)}{F'(x_k)} \\
+F'(x) = 1 - h \frac{\partial f}{\partial x}
+\)</span><span class="math notranslate nohighlight">\(
+Here \)</span>k<span class="math notranslate nohighlight">\( corresponds to the step taken. The iteration is stopped when the difference \)</span>|x_{k+1} - x_{k}|<span class="math notranslate nohighlight">\( is less than the given tolerance level. \)</span>F’(x)<span class="math notranslate nohighlight">\( is the derivative of the function \)</span>F$ and requires the Jacobian.</p>
+</div>
+</div>
+<div class="section" id="the-jacobian-function">
+<h3>The Jacobian Function<a class="headerlink" href="#the-jacobian-function" title="Permalink to this headline">¶</a></h3>
+<p>In cases where the set of reactions are stiff to evolve, the backward differentiation formulas and newton’s method are often employed in conjunction with to integrate the system. The availability of an exact jacobian is beneficial to solving the stiff system efficiently. Note that this is also optional, as modern solver package could also approximate the jacobian numerically by finite difference.</p>
+<div class="math notranslate nohighlight">
+\[J = \frac{\partial \bf f}{ \partial \bf y} \]</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">Dengo</span></code>, the reactions are handled internally through the <code class="docutils literal notranslate"><span class="pre">sympy</span></code> engine. The derivative can be easily obtained from the sympy analytical derivatives <code class="docutils literal notranslate"><span class="pre">sympy.diff</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">xcube</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xcube</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;RHS function of each chemical species</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state : ndarray with shape [NSPECIES + 1, N]</span>
+<span class="sd">    Abundances sorted by name, and the last dimension corresponds to the current check_time</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dy/dt: rate of change of each species</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="c1"># retreive the species </span>
+    <span class="n">dead_predator</span><span class="p">,</span><span class="n">dead_prey</span><span class="p">,</span><span class="n">ge</span><span class="p">,</span><span class="n">predator</span><span class="p">,</span><span class="n">prey</span><span class="p">,</span><span class="n">current_time</span><span class="o">=</span> <span class="n">state</span>
+
+<span class="c1"># calculate temperature</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">calculate_temperature</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    
+<span class="c1"># calculate mass density</span>
+    <span class="n">mdensity</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">dead_predator</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">dead_prey</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">predator</span> <span class="o">+</span> <span class="mf">1.0</span><span class="o">*</span><span class="n">prey</span><span class="o">*</span><span class="n">mh</span><span class="p">;</span>
+    <span class="n">inv_mdensity</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mdensity</span><span class="p">;</span>
+        
+<span class="c1"># calculate the h2 optical depth approximation        </span>
+    <span class="n">h2_optical_depth_approx</span>  <span class="o">=</span> <span class="nb">min</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">pow</span><span class="p">(</span> <span class="p">(</span><span class="n">mdensity</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.34e-14</span><span class="p">)</span> <span class="p">)</span>  <span class="p">,</span> <span class="o">-</span><span class="mf">0.45</span><span class="p">)</span> <span class="p">);</span>
+    
+    <span class="n">tau</span>      <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span> <span class="p">(</span><span class="n">mdensity</span> <span class="o">/</span> <span class="mf">3.3e-8</span> <span class="p">),</span> <span class="mf">2.8</span><span class="p">);</span>
+    <span class="n">tau</span>      <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="n">tau</span><span class="p">,</span> <span class="mf">1.0e-5</span> <span class="p">);</span>
+    <span class="n">cie_optical_depth_approx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau</span><span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="n">tau</span> <span class="p">);</span>
+
+<span class="c1"># interpolate the rates</span>
+    <span class="n">exp_growth_prey</span><span class="p">,</span><span class="n">predation</span><span class="p">,</span><span class="n">natural_death_predator</span><span class="p">,</span> <span class="o">=</span> <span class="n">interpolate_rates</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+    
+<span class="c1">#     = interpolate_cooling_rates(T)</span>
+
+<span class="c1"># rhs function</span>
+    
+    <span class="n">ddead_predator</span> <span class="o">=</span> <span class="n">natural_death_predator</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">predator</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span>
+    <span class="n">ddead_prey</span> <span class="o">=</span> <span class="n">predation</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">predator</span><span class="o">*</span><span class="n">prey</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span>
+    <span class="n">dge</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span>
+    <span class="n">dpredator</span> <span class="o">=</span> <span class="o">-</span><span class="n">natural_death_predator</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">predator</span> <span class="o">+</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">predation</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">predator</span><span class="o">*</span><span class="n">prey</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span>
+    <span class="n">dprey</span> <span class="o">=</span> <span class="n">exp_growth_prey</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">prey</span> <span class="o">-</span> <span class="n">predation</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">predator</span><span class="o">*</span><span class="n">prey</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span> 
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ddead_predator</span><span class="p">,</span><span class="n">ddead_prey</span><span class="p">,</span><span class="n">dge</span><span class="p">,</span><span class="n">dpredator</span><span class="p">,</span><span class="n">dprey</span><span class="p">,</span><span class="mf">0.0</span><span class="o">*</span><span class="n">current_time</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+
+<span class="n">mh</span>      <span class="o">=</span> <span class="mf">1.67e-24</span>
+<span class="n">kb</span>      <span class="o">=</span> <span class="mf">1.38e-16</span>
+<span class="n">gamma</span>   <span class="o">=</span> <span class="mf">5.</span><span class="o">/</span><span class="mf">3.</span>
+<span class="n">gammaH2_1</span> <span class="o">=</span> <span class="mf">7.</span><span class="o">/</span><span class="mf">5.</span>
+<span class="n">gammaH2_2</span> <span class="o">=</span> <span class="mf">7.</span><span class="o">/</span><span class="mf">5.</span>
+<span class="n">_gamma_m1</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span> <span class="p">(</span><span class="n">gamma</span><span class="o">-</span><span class="mf">1.</span><span class="p">)</span>
+
+<span class="c1"># read rates in as global variables</span>
+<span class="n">rates_table</span> <span class="o">=</span> <span class="s1">&#39;reaction_rates.h5&#39;</span>
+<span class="n">ratef</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">rates_table</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+<span class="c1"># Reaction Rates</span>
+<span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">%</span><span class="p">}</span>
+<span class="n">out</span><span class="p">{{</span><span class="n">k</span><span class="p">}}</span><span class="n">dev</span> <span class="o">=</span> <span class="n">ratef</span><span class="p">[</span><span class="s1">&#39;{{k}}&#39;</span><span class="p">][:]</span>
+<span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span> 
+
+<span class="c1"># Cooling Rates</span>
+<span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">cooling_actions</span> <span class="o">|</span> <span class="n">dictsort</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name2</span> <span class="ow">in</span> <span class="n">rate</span><span class="o">.</span><span class="n">tables</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">%</span><span class="p">}</span>
+<span class="n">out_</span><span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="n">_</span><span class="p">{{</span><span class="n">name2</span><span class="p">}}</span> <span class="o">=</span> <span class="n">ratef</span><span class="p">[</span><span class="s2">&quot;{{name}}_{{name2}}&quot;</span><span class="p">][:]</span>
+<span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+<span class="n">tdev</span> <span class="o">=</span> <span class="n">ratef</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">][:]</span>
+<span class="n">ratef</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">interpolate_rates</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Interpolate all the reaction rates based on temperature</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">k</span><span class="p">}}</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">tdev</span><span class="p">,</span> <span class="n">out</span><span class="p">{{</span><span class="n">k</span><span class="p">}}</span><span class="n">dev</span><span class="p">)</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span> 
+    <span class="k">return</span> <span class="p">(</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">k</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">)</span>
+<span class="k">def</span> <span class="nf">interpolate_cooling_rates</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Interpolate all the cooling rates based on temperature</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">cooling_actions</span> <span class="o">|</span> <span class="n">dictsort</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name2</span> <span class="ow">in</span> <span class="n">rate</span><span class="o">.</span><span class="n">tables</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="n">_</span><span class="p">{{</span><span class="n">name2</span><span class="p">}}</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">tdev</span><span class="p">,</span> <span class="n">out_</span><span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="n">_</span><span class="p">{{</span><span class="n">name2</span><span class="p">}})</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">cooling_actions</span> <span class="o">|</span> <span class="n">dictsort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name2</span> <span class="ow">in</span> <span class="n">rate</span><span class="o">.</span><span class="n">tables</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="n">_</span><span class="p">{{</span><span class="n">name2</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">calculate_temperature</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;calculate temperature based on the N different input state</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state : ndarray with shape [NSPECIES + 1, N]</span>
+<span class="sd">    Abundances sorted by name, and the last dimension corresponds to the current check_time</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    Temperature: ndarray</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="c1"># retreive the species </span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">required_species</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="n">_</span><span class="o">=</span> <span class="n">state</span>
+
+
+    <span class="n">density</span> <span class="o">=</span> <span class="p">{{</span><span class="n">network</span><span class="o">.</span><span class="n">print_mass_density</span><span class="p">()}}</span>
+
+    <span class="k">return</span> <span class="p">{{</span><span class="n">network</span><span class="o">.</span><span class="n">temperature_calculation</span><span class="p">()}}</span>
+
+
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;RHS function of each chemical species</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    state : ndarray with shape [NSPECIES + 1, N]</span>
+<span class="sd">    Abundances sorted by name, and the last dimension corresponds to the current check_time</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dy/dt: rate of change of each species</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="c1"># retreive the species </span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">required_species</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="n">current_time</span><span class="o">=</span> <span class="n">state</span>
+
+<span class="c1"># calculate temperature</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">calculate_temperature</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    
+<span class="c1"># calculate mass density</span>
+    <span class="n">mdensity</span> <span class="o">=</span> <span class="p">{{</span><span class="n">network</span><span class="o">.</span><span class="n">print_mass_density</span><span class="p">()}}</span><span class="o">*</span><span class="n">mh</span><span class="p">;</span>
+    <span class="n">inv_mdensity</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">mdensity</span><span class="p">;</span>
+        
+<span class="c1"># calculate the h2 optical depth approximation        </span>
+    <span class="n">h2_optical_depth_approx</span>  <span class="o">=</span> <span class="nb">min</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nb">pow</span><span class="p">(</span> <span class="p">(</span><span class="n">mdensity</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.34e-14</span><span class="p">)</span> <span class="p">)</span>  <span class="p">,</span> <span class="o">-</span><span class="mf">0.45</span><span class="p">)</span> <span class="p">);</span>
+    
+    <span class="n">tau</span>      <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span> <span class="p">(</span><span class="n">mdensity</span> <span class="o">/</span> <span class="mf">3.3e-8</span> <span class="p">),</span> <span class="mf">2.8</span><span class="p">);</span>
+    <span class="n">tau</span>      <span class="o">=</span> <span class="nb">max</span><span class="p">(</span> <span class="n">tau</span><span class="p">,</span> <span class="mf">1.0e-5</span> <span class="p">);</span>
+    <span class="n">cie_optical_depth_approx</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau</span><span class="p">)</span> <span class="p">)</span> <span class="o">/</span> <span class="n">tau</span> <span class="p">);</span>
+
+<span class="c1"># interpolate the rates</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">k</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span> <span class="o">=</span> <span class="n">interpolate_rates</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+    
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rate</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">cooling_actions</span> <span class="o">|</span> <span class="n">dictsort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">name2</span> <span class="ow">in</span> <span class="n">rate</span><span class="o">.</span><span class="n">tables</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{{</span><span class="n">name</span><span class="p">}}</span><span class="n">_</span><span class="p">{{</span><span class="n">name2</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span> <span class="o">=</span> <span class="n">interpolate_cooling_rates</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># rhs function</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">required_species</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">%</span><span class="p">}</span>
+    <span class="n">d</span><span class="p">{{</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">}}</span> <span class="o">=</span> <span class="p">{{</span><span class="n">rhs_dict</span><span class="p">[</span><span class="n">s</span><span class="p">]}}</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">ge</span><span class="p">)</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span> 
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">{</span><span class="o">%-</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">required_species</span> <span class="o">|</span> <span class="n">sort</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="n">d</span><span class="p">{{</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">}},</span> 
+    <span class="p">{</span><span class="o">%-</span> <span class="n">endfor</span> <span class="o">-%</span><span class="p">}</span>
+    <span class="mf">0.0</span><span class="o">*</span><span class="n">current_time</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span><span class="o">%</span><span class="p">}</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="jinja2-template-writer">
+<h3>Jinja2 Template Writer<a class="headerlink" href="#jinja2-template-writer" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Jinja2</span></code> is a popular templating engine. For example, if we have a “template” file as below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">solver</span><span class="o">.</span><span class="n">py</span>
+<span class="p">{{</span><span class="n">name</span><span class="p">}}</span> <span class="n">had</span> <span class="n">a</span> <span class="n">little</span> <span class="p">{{</span><span class="n">animal</span><span class="p">}}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> jinja_example.txt
+<span class="p">{{</span><span class="n">name</span><span class="p">}}</span> <span class="n">had</span> <span class="n">a</span> <span class="n">little</span> <span class="p">{{</span><span class="n">animal</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting jinja_example.txt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">FileSystemLoader</span>
+<span class="n">file_loader</span> <span class="o">=</span> <span class="n">FileSystemLoader</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">file_loader</span><span class="p">)</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s2">&quot;jinja_example.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="o">.</span><span class="n">species_total</span><span class="p">(</span><span class="s1">&#39;predator&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - natural_{death predator[i]} predator + 1.5 predation[i] predator prey\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cn</span><span class="o">.</span><span class="n">species_total</span><span class="p">(</span><span class="s1">&#39;dead_prey&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle predation[i] predator prey\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sympy.printing.pycode</span> <span class="kn">import</span> <span class="n">pycode</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhs_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">cn</span><span class="o">.</span><span class="n">required_species</span><span class="p">:</span>
+    <span class="n">rhs_dict</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">pycode</span><span class="p">(</span><span class="n">cn</span><span class="o">.</span><span class="n">species_total</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jinja2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>ls ~/data/dengo-merge/dengo/templates/scipy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dengo_scipy.py.template
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cat /mnt/gv0/homes/kwoksun2/dengo-merge/dengo/templates/scipy/dengo_scipy.py.template
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import h5py
+
+mh      = 1.67e-24
+kb      = 1.38e-16
+gamma   = 5./3.
+gammaH2_1 = 7./5.
+gammaH2_2 = 7./5.
+_gamma_m1 = 1./ (gamma-1.)
+
+# read rates in as global variables
+rates_table = &#39;reaction_rates.h5&#39;
+ratef = h5py.File(rates_table, &#39;r&#39;)
+
+# Reaction Rates
+{% for k in network.reactions.keys()%}
+out{{k}}dev = ratef[&#39;{{k}}&#39;][:]
+{%- endfor %} 
+
+# Cooling Rates
+{%- for name, rate in network.cooling_actions | dictsort %}
+{%- for name2 in rate.tables | sort %}
+out_{{name}}_{{name2}} = ratef[&quot;{{name}}_{{name2}}&quot;][:]
+{%- endfor %}
+{%- endfor %}
+tdev = ratef[&#39;T&#39;][:]
+ratef.close()
+
+def interpolate_rates(T):
+    &quot;&quot;&quot;Interpolate all the reaction rates based on temperature
+    &quot;&quot;&quot;
+    {% for k in network.reactions.keys()%}
+    {{k}} = np.interp(T, tdev, out{{k}}dev)
+    {%- endfor %} 
+    return (
+    {%- for k in network.reactions.keys() -%}
+    {{k}}, 
+    {%- endfor -%}
+    )
+def interpolate_cooling_rates(T):
+    &quot;&quot;&quot;Interpolate all the cooling rates based on temperature
+    &quot;&quot;&quot;
+    {%- for name, rate in network.cooling_actions | dictsort %}
+    {%- for name2 in rate.tables | sort %}
+    {{name}}_{{name2}} = np.interp(T, tdev, out_{{name}}_{{name2}})
+    {%- endfor %}
+    {%- endfor %}
+    return (
+    {%- for name, rate in network.cooling_actions | dictsort -%}
+    {%- for name2 in rate.tables | sort -%}
+    {{name}}_{{name2}}, 
+    {%- endfor -%}
+    {%- endfor -%}
+    )
+
+def calculate_temperature(state):
+    &quot;&quot;&quot;calculate temperature based on the N different input state
+
+    Parameters
+    ----------
+    state : ndarray with shape [NSPECIES + 1, N]
+    Abundances sorted by name, and the last dimension corresponds to the current check_time
+
+    Returns
+    -------
+    Temperature: ndarray
+
+    &quot;&quot;&quot;
+# retreive the species 
+    {% for s in network.required_species | sort -%}
+    {{s.name}}, 
+    {%- endfor -%}
+    _= state
+
+
+    density = {{network.print_mass_density()}}
+
+    return {{network.temperature_calculation()}}
+
+
+
+def f(state):
+    &quot;&quot;&quot;RHS function of each chemical species
+
+    Parameters
+    ----------
+    state : ndarray with shape [NSPECIES + 1, N]
+    Abundances sorted by name, and the last dimension corresponds to the current check_time
+
+    Returns
+    -------
+    dy/dt: rate of change of each species
+    &quot;&quot;&quot;
+
+# retreive the species 
+    {% for s in network.required_species | sort -%}
+    {{s.name}}, 
+    {%- endfor -%}
+    current_time= state
+
+# calculate temperature
+    T = calculate_temperature(state)
+    
+# calculate mass density
+    mdensity = {{network.print_mass_density()}}*mh;
+    inv_mdensity = 1/mdensity;
+        
+# calculate the h2 optical depth approximation        
+    h2_optical_depth_approx  = min( 1.0, pow( (mdensity / (1.34e-14) )  , -0.45) );
+    
+    tau      = pow( (mdensity / 3.3e-8 ), 2.8);
+    tau      = max( tau, 1.0e-5 );
+    cie_optical_depth_approx = min( 1.0, (1.0 - exp(-tau) ) / tau );
+
+# interpolate the rates
+    {% for k in network.reactions.keys() -%}
+    {{k}}, 
+    {%- endfor %} = interpolate_rates(T)
+
+    
+    {% for name, rate in network.cooling_actions | dictsort -%}
+    {%- for name2 in rate.tables | sort -%}
+    {{name}}_{{name2}}, 
+    {%- endfor -%}
+    {%- endfor -%} = interpolate_cooling_rates(T)
+
+# rhs function
+    {% for s in network.required_species | sort %}
+    d{{s.name}} = {{rhs_dict[s]}}*np.ones_like(ge)
+    {%- endfor %} 
+
+    return np.array([
+    {%- for s in network.required_species | sort -%}
+    d{{s.name}}, 
+    {%- endfor -%}
+    0.0*current_time
+    ])
+
+
+def Jac(state):
+    &quot;&quot;&quot;Jacobian function of each chemical species
+
+    Parameters
+    ----------
+    state : ndarray with shape [NSPECIES + 1, N]
+    Abundances sorted by name, and the last dimension corresponds to the current check_time
+
+    Returns
+    -------
+    Jacobian Matrix [NSPECIES, NSPECIES]
+    &quot;&quot;&quot;
+    jac = np.zeros({{network.required_species | length}}, {{network.required_species | length}})
+
+    # retreive the species 
+    {% for s in network.required_species | sort -%}
+    {{s.name}}, 
+    {%- endfor -%}
+    current_time= state
+
+    # calculate temperature
+    T = calculate_temperature(state)
+
+    # interpolate the rates
+    {% for k in network.reactions.keys() -%}
+    {{k}}, 
+    {%- endfor %} = interpolate_rates(T)
+
+    
+    {% for name, rate in network.cooling_actions | dictsort -%}
+    {%- for name2 in rate.tables | sort -%}
+    {{name}}_{{name2}}, 
+    {%- endfor -%}
+    {%- endfor -%} = interpolate_cooling_rates(T)
+
+    mdensity = {{network.print_mass_density()}};
+    inv_mdensity = 1/mdensity;
+
+    {%- for s2 in network.ode_species | sort %}
+    # Species: {{s2.name}}
+    {% set i_s2 = loop %}
+    {%- for s1 in network.ode_species | sort %}
+    {% set i_s1 = loop%}
+    # {{s2.name}} by {{s1.name}}
+    {{ network.print_jacobian_component(s2, s1, assign_to=&quot;jac[{0},{1}]&quot;.format( i_s2.index0, i_s1.index0 ) , print_zeros = True) }}
+
+    {%- if s2.name == &#39;ge&#39; %}
+    jac[{{i_s2.index0}}, {{i_s1.index0}}] *= inv_mdensity;
+    {%- endif %}
+    
+    {%- if s1.name == &#39;ge&#39; %}
+    jac[{{i_s2.index0}}, {{i_s1.index0}}] *= 0.0
+    {%- endif %}
+
+    {%- endfor %}
+    {%- endfor %}
+    
+    return jac
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jinja2</span>
+
+<span class="n">templateLoader</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">FileSystemLoader</span><span class="p">(</span><span class="n">searchpath</span><span class="o">=</span><span class="s2">&quot;/mnt/gv0/homes/kwoksun2/dengo-merge/dengo/templates/scipy&quot;</span><span class="p">)</span>
+<span class="n">templateEnv</span> <span class="o">=</span> <span class="n">jinja2</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">templateLoader</span><span class="p">)</span>
+<span class="n">TEMPLATE_FILE</span> <span class="o">=</span> <span class="s2">&quot;dengo_scipy.py.template&quot;</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">templateEnv</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="n">TEMPLATE_FILE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template_vars</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+             <span class="n">network</span><span class="o">=</span><span class="n">cn</span><span class="p">,</span> <span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;solver_name&quot;</span><span class="p">,</span> <span class="n">init_values</span><span class="o">=</span><span class="p">{},</span> <span class="n">rhs_dict</span><span class="o">=</span><span class="n">rhs_dict</span>
+         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;solver.py&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">template_vars</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">solver</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [132],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">solver</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">gv0</span><span class="o">/</span><span class="n">homes</span><span class="o">/</span><span class="n">kwoksun2</span><span class="o">/</span><span class="n">dengo</span><span class="o">-</span><span class="n">merge</span><span class="o">/</span><span class="n">cookbook</span><span class="o">/</span><span class="n">solver</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># read rates in as global variables</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">rates_table</span> <span class="o">=</span> <span class="s1">&#39;reaction_rates.h5&#39;</span>
+<span class="ne">---&gt; </span><span class="mi">13</span> <span class="n">ratef</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">rates_table</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> 
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1"># Reaction Rates</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/h5py/_hl/files.py:507,</span> in <span class="ni">File.__init__</span><span class="nt">(self, name, mode, driver, libver, userblock_size, swmr, rdcc_nslots, rdcc_nbytes, rdcc_w0, track_order, fs_strategy, fs_persist, fs_threshold, fs_page_size, page_buf_size, min_meta_keep, min_raw_keep, locking, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>     <span class="n">fapl</span> <span class="o">=</span> <span class="n">make_fapl</span><span class="p">(</span><span class="n">driver</span><span class="p">,</span> <span class="n">libver</span><span class="p">,</span> <span class="n">rdcc_nslots</span><span class="p">,</span> <span class="n">rdcc_nbytes</span><span class="p">,</span> <span class="n">rdcc_w0</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>                      <span class="n">locking</span><span class="p">,</span> <span class="n">page_buf_size</span><span class="p">,</span> <span class="n">min_meta_keep</span><span class="p">,</span> <span class="n">min_raw_keep</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>     <span class="n">fcpl</span> <span class="o">=</span> <span class="n">make_fcpl</span><span class="p">(</span><span class="n">track_order</span><span class="o">=</span><span class="n">track_order</span><span class="p">,</span> <span class="n">fs_strategy</span><span class="o">=</span><span class="n">fs_strategy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>                      <span class="n">fs_persist</span><span class="o">=</span><span class="n">fs_persist</span><span class="p">,</span> <span class="n">fs_threshold</span><span class="o">=</span><span class="n">fs_threshold</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>                      <span class="n">fs_page_size</span><span class="o">=</span><span class="n">fs_page_size</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">507</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">make_fid</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">userblock_size</span><span class="p">,</span> <span class="n">fapl</span><span class="p">,</span> <span class="n">fcpl</span><span class="p">,</span> <span class="n">swmr</span><span class="o">=</span><span class="n">swmr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">libver</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_libver</span> <span class="o">=</span> <span class="n">libver</span>
+
+<span class="nn">File ~/anaconda3/lib/python3.8/site-packages/h5py/_hl/files.py:220,</span> in <span class="ni">make_fid</span><span class="nt">(name, mode, userblock_size, fapl, fcpl, swmr)</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="k">if</span> <span class="n">swmr</span> <span class="ow">and</span> <span class="n">swmr_support</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>         <span class="n">flags</span> <span class="o">|=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_SWMR_READ</span>
+<span class="ne">--&gt; </span><span class="mi">220</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;r+&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="n">fid</span> <span class="o">=</span> <span class="n">h5f</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">h5f</span><span class="o">.</span><span class="n">ACC_RDWR</span><span class="p">,</span> <span class="n">fapl</span><span class="o">=</span><span class="n">fapl</span><span class="p">)</span>
+
+<span class="nn">File h5py/_objects.pyx:54,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/_objects.pyx:55,</span> in <span class="ni">h5py._objects.with_phil.wrapper</span><span class="nt">()</span>
+
+<span class="nn">File h5py/h5f.pyx:106,</span> in <span class="ni">h5py.h5f.open</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] Unable to open file (unable to open file: name = &#39;reaction_rates.h5&#39;, errno = 2, error message = &#39;No such file or directory&#39;, flags = 0, o_flags = 0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyximport</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">solver_name</span> <span class="o">=</span> <span class="s2">&quot;test_grackle&quot;</span>
+<span class="n">output_dir</span>  <span class="o">=</span> <span class="s1">&#39;.&#39;</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">dengo_network</span>
+
+<span class="c1"># specify the library path</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HDF5_DIR&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/anaconda3&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CVODE_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/dengo-merge/cvode-3.1.0/instdir&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;HDF5_PATH&quot;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/anaconda3&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SUITESPARSE_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/dengo-merge/suitesparse&quot;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DENGO_INSTALL_PATH&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;/home/kwoksun2/dengo_install&quot;</span>
+
+<span class="c1"># install the library</span>
+<span class="n">pyximport</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="n">setup_args</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;include_dirs&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">get_include</span><span class="p">()},</span>
+                  <span class="n">reload_support</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">.</span><span class="n">write_solver</span><span class="p">(</span><span class="n">solver_name</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+                <span class="n">solver_template</span><span class="o">=</span><span class="s2">&quot;cv_omp/sundials_CVDls&quot;</span><span class="p">,</span>
+                <span class="n">ode_solver_source</span><span class="o">=</span><span class="s2">&quot;initialize_cvode_solver.C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Sunny Tang<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
